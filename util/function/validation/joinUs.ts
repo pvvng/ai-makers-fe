@@ -34,10 +34,6 @@ export function validatePasswordHasSpace(password: string) {
   return !password.includes(" ");
 }
 
-export function changeValidationTextColor(isValid: boolean) {
-  return isValid ? "text-blue-500" : "text-orange-500";
-}
-
 export function changeValidationIconType(isValid: boolean) {
   return isValid ? faCircleExclamation : faTriangleExclamation;
 }
