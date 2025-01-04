@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function JoinUsHeader() {
   return (
     <div id="header">
-      <HeaderLogo />
       <HeaderLinks />
+      <HeaderLogo />
     </div>
   );
 }
