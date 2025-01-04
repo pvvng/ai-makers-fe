@@ -21,6 +21,7 @@ export default function Input({inputProps}: {inputProps: InputProps}) {
         type={type}
         id={htmlId}
         placeholder={placeholder}
+        name={htmlId}
       />
     </div>
   );
