@@ -3,7 +3,7 @@ import BirthGenderInputBox from "./bodyItems/BirthGenderInputBox";
 import IdInput from "./bodyItems/IdInput";
 import LanguageSelector from "./bodyItems/LanguageSelector";
 import NameInput from "./bodyItems/NameInput";
-import PasswordInputBox from "./bodyItems/PasswordInput";
+import PasswordInputBox from "./bodyItems/password/PasswordInputBox";
 import PurposeInterestContestSelectBox from "./bodyItems/PurposeInterestContestSelectBox";
 
 export default function JoinUsBody() {
