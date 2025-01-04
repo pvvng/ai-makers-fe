@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // validation functions
 import {
   changeValidationIconType,
-  changeValidationTextColor,
   validatePasswordConfirm,
   validatePasswordHasSpace,
   validatePasswordLength,
   validatePasswordRegex,
 } from "@/util/function/validation/joinUs";
+import classNames from "classnames";
 
 export default function PasswordValidateField({
   password,
@@ -57,7 +57,12 @@ function ValidationMessage({
   message: string;
 }) {
   return (
-    <p className={changeValidationTextColor(isValid)}>
+    <p
+      className={classNames({
+        "text-blue-500": isValid,
+        "text-orange-500": !isValid,
+      })}
+    >
       <FontAwesomeIcon icon={changeValidationIconType(isValid)} /> {message}
     </p>
   );
