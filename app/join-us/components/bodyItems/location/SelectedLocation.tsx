@@ -32,16 +32,40 @@ function BadgeBox() {
   }
 
   return (
-    <div className="mt-3 mb-2">
-      <LocationBadge text={selectedArea} />
-      {selectedArea && <span className="border border-r mr-2" />}
-      <LocationBadge text={selectedCity} />
-      {selectedCity && <span className="border border-r mr-2" />}
-      {selectedDistricts.map((district) => (
-        <LocationBadge key={district} text={district} />
-      ))}
+    <div className="mb-2">
+      <AreaBadgeBox selectedArea={selectedArea} />
+      <CityBadgeBox selectedCity={selectedCity} />
+      <DistrictBadgeBox selectedDistricts={selectedDistricts} />
     </div>
   );
+}
+
+function AreaBadgeBox({ selectedArea }: { selectedArea: string | null }) {
+  return (
+    <>
+      <LocationBadge text={selectedArea} />
+      {selectedArea && <span className="border border-r mr-2" />}
+    </>
+  );
+}
+
+function CityBadgeBox({ selectedCity }: { selectedCity: string | null }) {
+  return (
+    <>
+      <LocationBadge text={selectedCity} />
+      {selectedCity && <span className="border border-r mr-2" />}
+    </>
+  );
+}
+
+function DistrictBadgeBox({
+  selectedDistricts,
+}: {
+  selectedDistricts: string[];
+}) {
+  return selectedDistricts.map((district) => (
+    <LocationBadge key={district} text={district} />
+  ));
 }
 
 function LocationBadge({ text }: { text: string | null }) {
