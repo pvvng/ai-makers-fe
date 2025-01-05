@@ -1,5 +1,9 @@
 // type
 import { Metadata } from "next";
+// components
+import GoMainLink from "./components/GoMainLink";
+import LogoField from "./components/LogoField";
+import SignInField from "./components/SignInField";
 
 export const metadata: Metadata = {
   title: "로그인",
@@ -7,10 +11,12 @@ export const metadata: Metadata = {
 
 export default function SignInPage() {
   return (
-    <div className="flex flex-wrap h-screen justify-center items-center p-2">
-      <form className="w-[720px] text-center" action="/api/login" method="GET">
-        <h1 className="text-3xl font-bold text-center">LOGIN</h1>
-      </form>
+    <div className="px-3 sm:px-8 md:px-10 lg:px-20">
+      <GoMainLink />
+      <div className="w-full bg-white md:p-20 sm:p-10 p-4 flex flex-wrap justify-center items-center min-h-[500px]">
+        <LogoField />
+        <SignInField />
+      </div>
     </div>
   );
 }

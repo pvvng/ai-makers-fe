@@ -15,7 +15,7 @@ function HeaderLinks() {
       <Link href="/login">로그인</Link>
       <span> | </span>
       <Link href="/" className="text-end">
-        홈
+        홈화면으로
       </Link>
     </div>
   );
