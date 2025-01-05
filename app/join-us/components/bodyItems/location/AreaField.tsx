@@ -1,25 +1,25 @@
-'use client';
-
+"use client";
+// store
 import LoactionButton from "./LoactionButton";
 import useLocationStore from "@/store/useLocationStore";
+// data get function
 import { areaKeys } from "@/util/function/location/getAreaData";
 
 export default function AreaField() {
-  const { selectedArea, areaHandler } = useLocationStore();
-
-  const selectedButtonColor = (value: string) =>
-    selectedArea === value ? "bg-blue-500 text-white" : "";
+  const { areaHandler } = useLocationStore();
 
   return (
-    <div className="w-3/12 border p-2 overflow-scroll">
-      {areaKeys.map((area) => (
-        <LoactionButton
-          key={area}
-          value={area}
-          selectedButtonColor={() => selectedButtonColor(area)}
-          clickHandler={areaHandler}
-        />
-      ))}
+    <div className="md:w-3/12 w-1/2 px-1">
+      <div className="border p-2 sm:h-[300px] h-[200px] overflow-scroll shadow">
+        {areaKeys.map((area) => (
+          <LoactionButton
+            key={area}
+            value={area}
+            type="area"
+            clickHandler={areaHandler}
+          />
+        ))}
+      </div>
     </div>
   );
 }

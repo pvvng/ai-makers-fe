@@ -1,16 +1,25 @@
+"use client";
+// store
+import useLocationStore, { SelectType } from "@/store/useLocationStore";
+
 export default function LoactionButton({
   value,
+  type,
   clickHandler,
-  selectedButtonColor,
 }: {
   value: string;
+  type: SelectType;
   clickHandler: (value: string) => void;
-  selectedButtonColor: (value: string) => "bg-blue-500 text-white" | "";
 }) {
+  const { selectButtonColor } = useLocationStore();
+
   return (
     <button
       type="button"
-      className={`block w-full p-2 border mb-2 ${selectedButtonColor(value)}`}
+      className={`block w-full p-2 border mb-2 ${selectButtonColor(
+        value,
+        type
+      )}`}
       onClick={() => clickHandler(value)}
     >
       {value}

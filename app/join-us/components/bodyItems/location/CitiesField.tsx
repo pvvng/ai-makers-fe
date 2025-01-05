@@ -1,26 +1,26 @@
-'use client';
-
+"use client";
+// store
 import LoactionButton from "./LoactionButton";
 import useLocationStore from "@/store/useLocationStore";
+// data get function
 import { getCities } from "@/util/function/location/getAreaData";
 
 export default function CitiesField() {
-  const { selectedArea, selectedCity, citiesHandler } = useLocationStore();
-
-  const selectedButtonColor = (value: string) =>
-    selectedCity === value ? "bg-blue-500 text-white" : "";
+  const { selectedArea, citiesHandler } = useLocationStore();
 
   return (
-    <div className="w-3/12 border p-2 overflow-scroll">
-      {selectedArea &&
-        getCities(selectedArea).map((city) => (
-          <LoactionButton
-            key={city}
-            value={city}
-            selectedButtonColor={() => selectedButtonColor(city)}
-            clickHandler={citiesHandler}
-          />
-        ))}
+    <div className="md:w-3/12 w-1/2 px-1">
+      <div className="border p-2 sm:h-[300px] h-[200px] overflow-scroll shadow">
+        {selectedArea &&
+          getCities(selectedArea).map((city) => (
+            <LoactionButton
+              key={city}
+              value={city}
+              type="city"
+              clickHandler={citiesHandler}
+            />
+          ))}
+      </div>
     </div>
   );
 }
