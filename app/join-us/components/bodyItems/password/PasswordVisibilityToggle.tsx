@@ -23,7 +23,6 @@ export default function PasswordVisibilityToggle({
         id="check-button"
         className="mx-2"
         type="checkbox"
-        required
         onChange={checkBoxHandler}
       />
       <label htmlFor="check-button" className="text-sm">

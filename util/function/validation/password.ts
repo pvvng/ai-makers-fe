@@ -1,17 +1,16 @@
 // icons
+import { passwordRegex } from "@/constants";
 import {
   faCircleExclamation,
   faTriangleExclamation,
 } from "@fortawesome/free-solid-svg-icons";
 
+// ui paaword validation
 export function validatePasswordLength(password: string) {
   return password.length >= 8;
 }
 
 export function validatePasswordRegex(password: string) {
-  const passwordRegex =
-    /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
-
   return passwordRegex.test(password);
 }
 
