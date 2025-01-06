@@ -10,7 +10,7 @@ export default function PasswordInput({
 }) {
   return (
     <input
-      className="border h-12 p-2 sm:w-10/12 w-8/12"
+      className="border h-12 p-2 sm:w-10/12 w-8/12 shadow"
       placeholder="비밀번호"
       type={passwordType}
       required

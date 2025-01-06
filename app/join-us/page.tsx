@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import JoinButton from "./components/JoinButton";
 import JoinUsBody from "./components/Body";
 import JoinUsHeader from "./components/Header";
 

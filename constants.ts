@@ -31,14 +31,19 @@ export const languageOptions = [
   "Dart",
   "기타",
 ];
+
+export type Options = {
+  value: string;
+  label: string;
+}[];
 /** join-us purpose options */
-export const purposeOptions = [
+export const purposeOptions: Options = [
   { value: "contest", label: "공모전" },
   { value: "study", label: "스터디" },
   { value: "etc", label: "기타" },
 ];
 /** join-us interest options */
-export const interestOptions = [
+export const interestOptions: Options = [
   { value: "robot", label: "로봇" },
   { value: "game", label: "게임" },
   { value: "ai", label: "인공지능" },
@@ -49,7 +54,14 @@ export const interestOptions = [
   { value: "etc", label: "기타" },
 ];
 /** join-us contest options */
-export const contestOptions = ["0회", "1회", "2회", "3회", "4회", "5회 이상"];
+export const contestOptions: Options = [
+  { value: "0", label: "0회" },
+  { value: "1", label: "1회" },
+  { value: "2", label: "2회" },
+  { value: "3", label: "3회" },
+  { value: "4", label: "4회" },
+  { value: "5", label: "5회 이상" },
+];
 
 type Area = {
   [region: string]: {
@@ -332,3 +344,10 @@ export const area: Area = {
     제주특별자치도: ["서귀포시", "제주시"],
   },
 };
+
+export const passwordRegex =
+  /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{8,}$/;
+
+export const idRegex = /^(?![0-9]+$)(?=[a-zA-Z0-9]*$)(?=.*[a-zA-Z])(?=.*\d).+$/;
+
+export const nicgkNameRegex = /^(?!\d+$)[a-zA-Z0-9가-힣]+$/;
