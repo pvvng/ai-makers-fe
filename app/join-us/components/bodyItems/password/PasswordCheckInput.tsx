@@ -9,6 +9,7 @@ export default function PasswordCheckInput({
       placeholder="비밀번호 확인"
       type="password"
       minLength={8}
+      required
       onChange={(e) => setConfirmPassword(e.currentTarget.value)}
     />
   );
