@@ -1,12 +1,11 @@
-import AvailabilityDaysSelector from "./bodyItems/AvailabilityDaysSelector";
 import BirthGenderInputBox from "./bodyItems/BirthGenderInputBox";
 import IdInput from "./bodyItems/IdInput";
-import LanguageSelector from "./bodyItems/LanguageSelector";
 import NameInput from "./bodyItems/NameInput";
 import PasswordInputBox from "./bodyItems/password/PasswordInputBox";
 import PurposeInterestContestSelectBox from "./bodyItems/PurposeInterestContestSelectBox";
 import AvailabilityLocation from "./bodyItems/Location";
 import JoinButton from "./JoinButton";
+import Selector from "./bodyItems/Selector";
 
 export default function JoinUsBody() {
   return (
@@ -18,8 +17,8 @@ export default function JoinUsBody() {
         <NameInput />
         <BirthGenderInputBox />
         <PurposeInterestContestSelectBox />
-        <LanguageSelector />
-        <AvailabilityDaysSelector />
+        <Selector type="language" />
+        <Selector type="day" />
         <AvailabilityLocation />
       </div>
       <JoinButton />
