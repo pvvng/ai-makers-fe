@@ -1,4 +1,5 @@
 import { days } from "@/constants";
+import SelectorButton from "./SelectorButton";
 
 export default function AvailabilityDaysSelector() {
   return (
@@ -15,18 +16,8 @@ export default function AvailabilityDaysSelector() {
 
 function DayCheckbox({ day }: { day: string }) {
   return (
-    <div className="w-1/4 px-1 pt-1">
-      <div key={day} className="w-full text-center">
-        <input id={day} type="checkbox" className="hidden peer" />
-        <label
-          htmlFor={day}
-          className="w-full lg:h-18 md:h-16 sm:h-14 h-12 border cursor-pointer 
-        peer-checked:bg-blue-500 peer-checked:text-white 
-        flex items-center justify-center transition"
-        >
-          {day}
-        </label>
-      </div>
+    <div className="w-1/4 px-1 pt-1 text-center">
+      <SelectorButton text={day} />
     </div>
   );
 }

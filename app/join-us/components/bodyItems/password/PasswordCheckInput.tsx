@@ -8,7 +8,6 @@ export default function PasswordCheckInput({
       className="border h-12 p-2 w-full mt-2"
       placeholder="비밀번호 확인"
       type="password"
-      required
       minLength={8}
       onChange={(e) => setConfirmPassword(e.currentTarget.value)}
     />

@@ -15,6 +15,7 @@ function BrithInput() {
       placeholder="생년월일 (예시. 20021221)"
       maxLength={6}
       required
+      name="birth"
     />
   );
 }
@@ -22,7 +23,12 @@ function BrithInput() {
 function GenderSelect() {
   return (
     <div className="w-2/5">
-      <select className="border h-12 w-full p-2" required defaultValue="">
+      <select
+        className="border h-12 w-full p-2"
+        required
+        defaultValue=""
+        name="gender"
+      >
         <option value="" disabled>
           성별
         </option>

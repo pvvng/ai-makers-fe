@@ -12,7 +12,6 @@ export default function SignInPage() {
     <div className="max-w-screen-xl mx-auto px-5 lg:px-48 sm:px-14">
       <JoinUsHeader />
       <JoinUsBody />
-      <JoinButton />
     </div>
   );
 }

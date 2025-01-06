@@ -15,6 +15,7 @@ export default function PasswordInput({
       type={passwordType}
       required
       minLength={8}
+      name="password"
       onChange={(e) => setPassword(e.currentTarget.value)}
     />
   );
