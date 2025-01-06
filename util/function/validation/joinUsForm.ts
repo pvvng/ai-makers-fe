@@ -8,7 +8,7 @@ export function validateId(id: string) {
     return "아이디를 입력해주세요.";
   }
 
-  if (validateIdHasSpace(id)) {
+  if (!validateIdHasSpace(id)) {
     return "아이디에 공백을 포함할 수 없습니다.";
   }
 
@@ -104,7 +104,7 @@ export function validateLanguageDayLocationValue(value: string, type: string) {
 }
 
 function parseStringToArray(strValue: string): string[] {
-  return JSON.parse(strValue);
+  return strValue.split(",").filter(Boolean);
 }
 
 function isArrayEmpty(arr: string[]) {
