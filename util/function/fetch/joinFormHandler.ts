@@ -2,6 +2,8 @@ import { FormElment, FormFieldName, FormValues } from "@/types/form";
 import { FormEvent } from "react";
 import { validateFormValues } from "../validation/validateFormValues";
 
+const REDIRECT_PAGE = "/login";
+
 export function joinFormHandler(e: FormEvent<HTMLButtonElement>) {
   e.preventDefault();
 
@@ -18,7 +20,9 @@ export function joinFormHandler(e: FormEvent<HTMLButtonElement>) {
 
   if (validation) {
     form.submit();
-    
+
+    window.location.href = REDIRECT_PAGE;
+
     return;
   }
 }
