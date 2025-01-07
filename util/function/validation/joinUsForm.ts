@@ -82,6 +82,10 @@ export function validateBirth(birth: string) {
     return "생년월일은 숫자로 입력해주세요.";
   }
 
+  if(parsedBirth < 19000101 || parsedBirth > 20211231) {
+    return "생년월일은 1900년 1월 1일부터 2021년 12월 31일 사이로 입력해주세요.";
+  }
+
   return null;
 }
 
