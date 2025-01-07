@@ -7,7 +7,7 @@ import {
 
 // ui paaword validation
 export function validatePasswordLength(password: string) {
-  return password.length >= 8;
+  return password.length >= 8 && password.length <= 20;
 }
 
 export function validatePasswordRegex(password: string) {

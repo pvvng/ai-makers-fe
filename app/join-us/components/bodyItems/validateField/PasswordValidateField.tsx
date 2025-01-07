@@ -18,7 +18,7 @@ export default function PasswordValidateField({
   const validationResults = [
     {
       isValid: validatePasswordLength(password),
-      message: "비밀번호는 8자 이상으로 입력해주세요.",
+      message: "비밀번호는 8자 이상 20자 이하로 입력해주세요.",
     },
     {
       isValid: validatePasswordRegex(password),

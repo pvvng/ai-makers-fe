@@ -7,7 +7,6 @@ import JoinButton from "./JoinButton";
 import Selector from "./bodyItems/selector/Selector";
 import IdInputBox from "./bodyItems/id/IdInputBox";
 import BodyExplain from "./bodyItems/BodyExplain";
-import HiddenInput from "./bodyItems/HiddenInput";
 
 export default function JoinUsBody() {
   return (
@@ -22,7 +21,6 @@ export default function JoinUsBody() {
         <Selector type="language" />
         <Selector type="day" />
         <AvailabilityLocation />
-        <HiddenInput />
       </div>
       <JoinButton />
     </form>
