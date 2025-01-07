@@ -1,5 +1,6 @@
+// contants
+import { passwordRegex } from "@/constants/regex";
 // icons
-import { passwordRegex } from "@/constants";
 import {
   faCircleExclamation,
   faTriangleExclamation,

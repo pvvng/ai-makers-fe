@@ -1,5 +1,6 @@
+// constants
+import { nicgkNameRegex } from "@/constants/regex";
 // validation functions
-import { nicgkNameRegex } from "@/constants";
 import { validatePasswordHasSpace, validatePasswordLength, validatePasswordRegex } from "./password";
 import { validateIdHasSpace, validateIdLength, validateIdRegex } from "./id";
 

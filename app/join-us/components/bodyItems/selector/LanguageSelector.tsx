@@ -1,4 +1,4 @@
-import { languageOptions } from "@/constants";
+import { languageOptions } from "@/constants/options";
 import SelectorButton from "./SelectorButton";
 
 export default function LanguageSelector() {

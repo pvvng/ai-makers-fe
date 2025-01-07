@@ -1,4 +1,4 @@
-import { idRegex } from "@/constants";
+import { idRegex } from "@/constants/regex";
 
 export function validateIdLength(id: string) {
   return id.length >= 6 && id.length <= 20;

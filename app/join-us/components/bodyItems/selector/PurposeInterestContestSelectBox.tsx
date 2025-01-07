@@ -1,9 +1,9 @@
 import {
   contestOptions,
   interestOptions,
-  Options,
   purposeOptions,
-} from "@/constants";
+} from "@/constants/options";
+import { Options } from "@/types/options";
 
 export default function PurposeInterestContestSelectBox() {
   const selectData = [
