@@ -1,23 +1,57 @@
+// constants
+import { nicgkNameRegex } from "@/constants/validation/regex";
 // validation functions
-import { nicgkNameRegex } from "@/constants";
-import { validatePasswordHasSpace, validatePasswordLength, validatePasswordRegex } from "./password";
+import {
+  validatePasswordHasSpace,
+  validatePasswordLength,
+  validatePasswordRegex,
+} from "./password";
 import { validateIdHasSpace, validateIdLength, validateIdRegex } from "./id";
+// error messages
+import {
+  BIRTH_INVALID_ERROR_MESSAGE,
+  BIRTH_LENGTH_ERROR_MESSAGE,
+  BIRTH_RANGE_ERROR_MESSAGE,
+  BIRTH_RULE_ERROR_MESSAGE,
+  ID_INVALID_ERROR_MESSAGE,
+  ID_LENGTH_ERROR_MESSAGE,
+  ID_RULE_ERROR_MESSAGE,
+  ID_SPACE_ERROR_MESSAGE,
+  NICKNAME_INVALID_ERROR_MESSAGE,
+  NICKNAME_LENGTH_ERROR_MESSAGE,
+  NICKNAME_RULE_ERROR_MESSAGE,
+  PASSWORD_CONFIRM_ERROR_MESSAGE,
+  PASSWORD_INVALID_ERROR_MESSAGE,
+  PASSWORD_LENGTH_ERROR_MESSAGE,
+  PASSWORD_RULE_ERROR_MESSAGE,
+  PASSWORD_SPACE_ERROR_MESSAGE,
+  SELECT_REQUIRED_ERROR_MESSAGE,
+} from "@/constants/validation/errorMessage";
+// constants
+import {
+  MAX_NICKNAME_LENGTH,
+  MIN_NICKNAME_LENGTH,
+} from "@/constants/validation/length/nicknameLength";
+import {
+  MAX_BIRTH_DAY,
+  MIN_BITRH_DAY,
+} from "@/constants/validation/length/birthLength";
 
 export function validateId(id: string) {
   if (!id) {
-    return "아이디를 입력해주세요.";
+    return ID_INVALID_ERROR_MESSAGE;
   }
 
   if (!validateIdHasSpace(id)) {
-    return "아이디에 공백을 포함할 수 없습니다.";
+    return ID_SPACE_ERROR_MESSAGE;
   }
 
   if (!validateIdRegex(id)) {
-    return "아이디는 특수문자를 제외하고 영문, 숫자를 포함해주세요.";
+    return ID_RULE_ERROR_MESSAGE;
   }
 
-  if (!validateIdLength(id)) { 
-    return "아이디는 6자 이상 20자 이하로 입력해주세요.";
+  if (!validateIdLength(id)) {
+    return ID_LENGTH_ERROR_MESSAGE;
   }
 
   return null;
@@ -25,27 +59,30 @@ export function validateId(id: string) {
 
 export function validatePassword(password: string) {
   if (!password) {
-    return "비밀번호를 입력해주세요.";
+    return PASSWORD_INVALID_ERROR_MESSAGE;
   }
 
   if (!validatePasswordLength(password)) {
-    return "비밀번호는 8자 이상으로 입력해주세요.";
+    return PASSWORD_LENGTH_ERROR_MESSAGE;
   }
 
   if (!validatePasswordRegex(password)) {
-    return "비밀번호는 영문, 숫자, 특수문자를 포함해주세요.";
+    return PASSWORD_RULE_ERROR_MESSAGE;
   }
 
   if (!validatePasswordHasSpace(password)) {
-    return "비밀번호에 공백을 포함할 수 없습니다.";
+    return PASSWORD_SPACE_ERROR_MESSAGE;
   }
 
   return null;
 }
 
-export function validatePasswordConfirmInForm(password: string, confirmPassword: string) {
+export function validatePasswordConfirmInForm(
+  password: string,
+  confirmPassword: string
+) {
   if (password !== confirmPassword) {
-    return "비밀번호가 일치하지 않습니다.";
+    return PASSWORD_CONFIRM_ERROR_MESSAGE;
   }
 
   return null;
@@ -53,15 +90,18 @@ export function validatePasswordConfirmInForm(password: string, confirmPassword:
 
 export function validateNickname(nickname: string) {
   if (!nickname) {
-    return "닉네임을 입력해주세요.";
+    return NICKNAME_INVALID_ERROR_MESSAGE;
   }
 
   if (!nicgkNameRegex.test(nickname)) {
-    return "닉네임은 특수문자를 제외하고 한글, 영문, 숫자를 포함해주세요.";
+    return NICKNAME_RULE_ERROR_MESSAGE;
   }
 
-  if (nickname.length < 2 || nickname.length > 10) {
-    return "닉네임은 2자 이상 10자 이하로 입력해주세요.";
+  if (
+    nickname.length < MIN_NICKNAME_LENGTH ||
+    nickname.length > MAX_NICKNAME_LENGTH
+  ) {
+    return NICKNAME_LENGTH_ERROR_MESSAGE;
   }
 
   return null;
@@ -71,15 +111,19 @@ export function validateBirth(birth: string) {
   const parsedBirth = parseInt(birth);
 
   if (!birth) {
-    return "생년월일을 입력해주세요.";
+    return BIRTH_INVALID_ERROR_MESSAGE;
   }
 
-  if (birth.length !== 8) {
-    return "생년월일은 8자리로 입력해주세요.";
+  if (birth.length !== MAX_BIRTH_DAY) {
+    return BIRTH_LENGTH_ERROR_MESSAGE;
   }
 
   if (isNaN(parsedBirth)) {
-    return "생년월일은 숫자로 입력해주세요.";
+    return BIRTH_RULE_ERROR_MESSAGE;
+  }
+
+  if (parsedBirth < MIN_BITRH_DAY || parsedBirth > MAX_BIRTH_DAY) {
+    return BIRTH_RANGE_ERROR_MESSAGE;
   }
 
   return null;
@@ -87,7 +131,7 @@ export function validateBirth(birth: string) {
 
 export function validateSelectValue(value: string, type: string) {
   if (!value) {
-    return `${type} 필드는 필수 항목입니다.`;
+    return SELECT_REQUIRED_ERROR_MESSAGE(type);
   }
 
   return null;
@@ -97,7 +141,7 @@ export function validateLanguageDayLocationValue(value: string, type: string) {
   const parsedValue = parseStringToArray(value);
 
   if (isArrayEmpty(parsedValue)) {
-    return `${type} 필드는 필수 항목입니다.`;
+    return SELECT_REQUIRED_ERROR_MESSAGE(type);
   }
 
   return null;

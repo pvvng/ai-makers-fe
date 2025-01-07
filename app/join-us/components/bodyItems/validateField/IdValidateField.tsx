@@ -6,20 +6,26 @@ import {
 } from "@/util/function/validation/id";
 // components
 import ValidationFieldBox from "./ValidationFieldBox";
+// error messages
+import {
+  ID_LENGTH_ERROR_MESSAGE,
+  ID_RULE_ERROR_MESSAGE,
+  ID_SPACE_ERROR_MESSAGE,
+} from "@/constants/validation/errorMessage";
 
 export default function IdValidateField({ id }: { id: string }) {
   const validationResults = [
     {
       isValid: validateIdLength(id),
-      message: "아이디는 6자 이상 20자 이하로 입력해주세요.",
+      message: ID_LENGTH_ERROR_MESSAGE,
     },
     {
       isValid: validateIdRegex(id),
-      message: "아이디는 특수문자를 제외하고 영문, 숫자를 포함해주세요.",
+      message: ID_RULE_ERROR_MESSAGE,
     },
     {
       isValid: validateIdHasSpace(id),
-      message: "아이디에는 공백이 포함될 수 없습니다.",
+      message: ID_SPACE_ERROR_MESSAGE,
     },
   ];
 

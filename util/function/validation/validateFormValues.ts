@@ -10,6 +10,16 @@ import {
   validatePasswordConfirmInForm,
   validateSelectValue,
 } from "./joinUsForm";
+// constants
+import {
+  AVAILABLE_DAY_LABEL,
+  AVAILABLE_LANGUAGE_LABEL,
+  AVAILABLE_LOCATION_LABEL,
+  CONTEST_LABEL,
+  GENDER_LABEL,
+  INTEREST_LABEL,
+  PURPOSE_LABEL,
+} from "@/constants/validation/selectValueLabel";
 
 export function validateFormValues(formValues: FormValues) {
   const formObject = createFormObject(formValues);
@@ -37,14 +47,20 @@ function getValidationResults(formObject: Record<FormFieldName, string>) {
     validateNickname(formObject.nickname),
     validateBirth(formObject.birth),
 
-    validateSelectValue(formObject.gender, "성별"),
-    validateSelectValue(formObject.purpose, "가입 목적"),
-    validateSelectValue(formObject.interest, "관심 주제"),
-    validateSelectValue(formObject.contest, "공모전 참가 횟수"),
+    validateSelectValue(formObject.gender, GENDER_LABEL),
+    validateSelectValue(formObject.purpose, PURPOSE_LABEL),
+    validateSelectValue(formObject.interest, INTEREST_LABEL),
+    validateSelectValue(formObject.contest, CONTEST_LABEL),
 
-    validateLanguageDayLocationValue(formObject.language, "사용 가능 언어"),
-    validateLanguageDayLocationValue(formObject.day, "활동 가능 요일"),
-    validateLanguageDayLocationValue(formObject.location, "활동 가능 지역"),
+    validateLanguageDayLocationValue(
+      formObject.language,
+      AVAILABLE_LANGUAGE_LABEL
+    ),
+    validateLanguageDayLocationValue(formObject.day, AVAILABLE_DAY_LABEL),
+    validateLanguageDayLocationValue(
+      formObject.location,
+      AVAILABLE_LOCATION_LABEL
+    ),
   ];
 }
 

@@ -5,5 +5,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   console.log(req.body);
-  return res.status(200).json("hi");
+  // 처리 로직
+  return res.status(200).json({message : "회원가입이 완료되었습니다."});
 }

@@ -1,4 +1,4 @@
-import { days } from "@/constants";
+import { days } from "@/constants/options";
 import SelectorButton from "./SelectorButton";
 
 export default function AvailabilityDaysSelector() {

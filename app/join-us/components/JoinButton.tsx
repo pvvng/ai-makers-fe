@@ -1,8 +1,9 @@
 'use client';
 
-import { joinFormHandler } from "@/util/function/fetch/joinFormHandler";
+import useJoinFormHandler from "@/util/hooks/useJoinFormHandler";
 
 export default function JoinButton() {
+  const { joinFormHandler } = useJoinFormHandler();
 
   return (
     <div className="text-end mt-3 mb-3 w-full">

@@ -1,8 +1,7 @@
 import { FormElment, FormFieldName, FormValues } from "@/types/form";
 import { FormEvent } from "react";
 import { validateFormValues } from "../validation/validateFormValues";
-
-const REDIRECT_PAGE = "/login";
+import fetchJoinUs from "./fetchJoinUs";
 
 export function joinFormHandler(e: FormEvent<HTMLButtonElement>) {
   e.preventDefault();
@@ -15,13 +14,10 @@ export function joinFormHandler(e: FormEvent<HTMLButtonElement>) {
   }
 
   const formValues: FormValues = [...getFormValues(form)];
-
   const validation = validateFormValues(formValues);
 
   if (validation) {
-    form.submit();
-
-    window.location.href = REDIRECT_PAGE;
+    fetchJoinUs(formValues);
 
     return;
   }

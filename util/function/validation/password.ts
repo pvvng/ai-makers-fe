@@ -1,5 +1,11 @@
+// contants
+import { INVALID_SPACE, INVALID_STRING } from "@/constants/validation/invalidString";
+import {
+  MAX_PASSWORD_LENGTH,
+  MIN_PASSWORD_LENGTH,
+} from "@/constants/validation/length/passwordLength";
+import { passwordRegex } from "@/constants/validation/regex";
 // icons
-import { passwordRegex } from "@/constants";
 import {
   faCircleExclamation,
   faTriangleExclamation,
@@ -7,7 +13,10 @@ import {
 
 // ui paaword validation
 export function validatePasswordLength(password: string) {
-  return password.length >= 8;
+  return (
+    password.length >= MIN_PASSWORD_LENGTH &&
+    password.length <= MAX_PASSWORD_LENGTH
+  );
 }
 
 export function validatePasswordRegex(password: string) {
@@ -18,7 +27,7 @@ export function validatePasswordConfirm(
   password: string,
   confirmPassword: string
 ) {
-  if (password === "" || confirmPassword === "") {
+  if (password === INVALID_STRING || confirmPassword === INVALID_STRING) {
     return false;
   }
 
@@ -26,11 +35,11 @@ export function validatePasswordConfirm(
 }
 
 export function validatePasswordHasSpace(password: string) {
-  if (password === "") {
+  if (password === INVALID_STRING) {
     return false;
   }
 
-  return !password.includes(" ");
+  return !password.includes(INVALID_SPACE);
 }
 
 export function changeValidationIconType(isValid: boolean) {
