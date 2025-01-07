@@ -15,7 +15,7 @@ export default async function fetchJoinUs(formValues: FormValues) {
 
   const joinFetchResult = await joinFetchJson.json();
 
-  console.log(joinFetchResult);
+  alert(joinFetchResult.message);
 
   window.location.href = REDIRECT_PAGE;
 }
