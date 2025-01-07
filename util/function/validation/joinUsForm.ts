@@ -32,7 +32,10 @@ import {
   MAX_NICKNAME_LENGTH,
   MIN_NICKNAME_LENGTH,
 } from "@/constants/validation/length/nicknameLength";
-import { MAX_BIRTH_DAY, MIN_BITRH_DAY } from "@/constants/validation/length/birthLength";
+import {
+  MAX_BIRTH_DAY,
+  MIN_BITRH_DAY,
+} from "@/constants/validation/length/birthLength";
 
 export function validateId(id: string) {
   if (!id) {
@@ -111,7 +114,7 @@ export function validateBirth(birth: string) {
     return BIRTH_INVALID_ERROR_MESSAGE;
   }
 
-  if (birth.length !== 8) {
+  if (birth.length !== MAX_BIRTH_DAY) {
     return BIRTH_LENGTH_ERROR_MESSAGE;
   }
 

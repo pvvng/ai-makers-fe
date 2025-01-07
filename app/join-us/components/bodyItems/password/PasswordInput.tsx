@@ -1,4 +1,8 @@
 // type
+import {
+  MAX_PASSWORD_LENGTH,
+  MIN_PASSWORD_LENGTH,
+} from "@/constants/validation/length/passwordLength";
 import { PasswordType } from "./PasswordInputBox";
 
 export default function PasswordInput({
@@ -14,7 +18,8 @@ export default function PasswordInput({
       placeholder="비밀번호"
       type={passwordType}
       required
-      minLength={8}
+      minLength={MIN_PASSWORD_LENGTH}
+      maxLength={MAX_PASSWORD_LENGTH}
       name="password"
       onChange={(e) => setPassword(e.currentTarget.value)}
     />
