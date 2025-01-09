@@ -3,7 +3,7 @@ import { INVALID_STRING } from "@/constants/validation/invalidString";
 
 export default function useIDLocalStorage() {
   function rememberId(id: string, checked: boolean) {
-    if (checked) {
+    if (checked && id) {
       localStorage.setItem(REMEMBER_ID, id);
     } else {
       localStorage.removeItem(REMEMBER_ID);
