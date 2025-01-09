@@ -16,7 +16,6 @@ export default function SignInIdInput() {
 
   useEffect(() => {
     const rememberedId = getRememberedId();
-
     if (rememberedId) {
       setRememberedIdState(rememberedId);
       setChecked(REMEMBER_ID, true);
