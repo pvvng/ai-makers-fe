@@ -7,6 +7,7 @@ import { FormEvent } from "react";
 // functions
 import { validateFormValues } from "../function/validation/validateFormValues";
 import fetchJoinUs from "../function/fetch/fetchJoinUs";
+import getForm from "../function/validation/validateForm";
 
 export default function useJoinFormHandler() {
   const storeValue = useGetStoreValue();
@@ -14,18 +15,10 @@ export default function useJoinFormHandler() {
   function joinFormHandler(e: FormEvent<HTMLButtonElement>) {
     e.preventDefault();
 
-    const form = (e.target as HTMLButtonElement).form;
+    const form = getForm(e);
+    if (!form) return;
 
-    if (!form) {
-      alert("제출 양식이 확인되지 않습니다. 다시 시도해주세요.");
-
-      return;
-    }
-
-    const formValues: FormValues = [
-      ...getFormValues(form),
-      ...storeValue,
-    ];
+    const formValues: FormValues = [...getFormValues(form), ...storeValue];
 
     const validationResult = validateFormValues(formValues);
 

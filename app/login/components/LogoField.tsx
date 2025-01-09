@@ -6,8 +6,8 @@ export default function LogoField() {
       <Image
         src="/세균.webp"
         alt="site-logo"
-        width={0}
-        height={0}
+        width={240}
+        height={240}
         sizes="100vw"
         className="w-full h-full m-auto rounded object-fill max-w-[240px]"
         priority

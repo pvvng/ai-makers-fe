@@ -34,6 +34,7 @@ import {
 } from "@/constants/validation/length/nicknameLength";
 import {
   MAX_BIRTH_DAY,
+  MAX_BIRTH_LENGTH,
   MIN_BITRH_DAY,
 } from "@/constants/validation/length/birthLength";
 
@@ -114,7 +115,8 @@ export function validateBirth(birth: string) {
     return BIRTH_INVALID_ERROR_MESSAGE;
   }
 
-  if (birth.length !== MAX_BIRTH_DAY) {
+  if (birth.length !== MAX_BIRTH_LENGTH) {
+    console.log(birth.length);
     return BIRTH_LENGTH_ERROR_MESSAGE;
   }
 

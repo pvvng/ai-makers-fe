@@ -38,6 +38,7 @@ export const languageOptions = [
   "Python",
   "Java",
   "JavaScript",
+  "TypeScript",
   "Ruby",
   "PHP",
   "Go",
@@ -45,5 +46,4 @@ export const languageOptions = [
   "Rust",
   "Swift",
   "Dart",
-  "기타",
 ];
