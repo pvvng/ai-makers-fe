@@ -1,90 +1,55 @@
 "use client";
-// icons
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// card
+// custom hook
+import useBannerCarousel from "@/util/hooks/useBannerCarousel";
+// components
 import BannerCard from "./BannerCard";
+import CarouselMoveButton from "./CarouselMoveButton";
 // react
 import { useState } from "react";
-// classnames
-import classNames from "classnames";
-
-const MIN_CAROUSEL_NUMBER = 0;
-const MAX_CAROUSEL_NUMBER = 50;
+// type
+import { ButtonData } from "@/types/carousel";
 
 export default function Carousel() {
   const [translateState, setTranslateState] = useState(0);
-
-  const handleLeftClick = () => {
-    setTranslateState((prev) =>
-      Math.min(prev + MAX_CAROUSEL_NUMBER, MIN_CAROUSEL_NUMBER)
-    );
-  };
-
-  const handleRightClick = () => {
-    setTranslateState((prev) =>
-      Math.max(prev - MAX_CAROUSEL_NUMBER, -MAX_CAROUSEL_NUMBER)
-    );
-  };
-
-  const moveButtonData: {
-    handler: () => void;
-    type: "left" | "right";
-  }[] = [
-    { handler: handleLeftClick, type: "left" },
-    { handler: handleRightClick, type: "right" },
-  ];
+  const { moveButtonData } = useBannerCarousel(setTranslateState);
 
   return (
     <div className="w-10/12 relative overflow-hidden">
-      <div
-        className="flex justify-start items-center relative w-[200%] transition-transform duration-500"
-        style={{ transform: `translateX(${translateState}%)` }}
-      >
-        {Array.from({ length: 8 }).map((_, i) => (
-          <BannerCard key={i} data={i} />
-        ))}
-      </div>
-      {moveButtonData.map((data) => (
-        <CarouselMoveButton
-          key={data.type}
-          translateState={translateState}
-          type={data.type}
-          onClick={data.handler}
-        />
+      <BannerCardContainer translateState={translateState} />
+      <CarouselButtonsContainer
+        translateState={translateState}
+        moveButtonData={moveButtonData}
+      />
+    </div>
+  );
+}
+
+function BannerCardContainer({ translateState }: { translateState: number }) {
+  return (
+    <div
+      className="flex justify-start items-center relative w-[200%] transition-transform duration-500"
+      style={{ transform: `translateX(${translateState}%)` }}
+    >
+      {Array.from({ length: 8 }).map((_, i) => (
+        <BannerCard key={i} data={i} />
       ))}
     </div>
   );
 }
 
-function CarouselMoveButton({
+function CarouselButtonsContainer({
   translateState,
-  type,
-  onClick,
+  moveButtonData,
 }: {
   translateState: number;
-  type: "left" | "right";
-  onClick: () => void;
+  moveButtonData: ButtonData;
 }) {
-  const getClassname = () => {
-    return classNames(
-      "absolute top-1/2 transform -translate-y-1/2 p-2 bg-gray-400 text-white rounded-full transition-all",
-      {
-        hidden:
-          (type === "left" && translateState === MIN_CAROUSEL_NUMBER) ||
-          (type === "right" && translateState === -MAX_CAROUSEL_NUMBER),
-        block:
-          !(type === "left" && translateState === MIN_CAROUSEL_NUMBER) &&
-          !(type === "right" && translateState === -MAX_CAROUSEL_NUMBER),
-        "left-2": type === "left",
-        "right-2": type === "right",
-      }
-    );
-  };
-
-  return (
-    <button className={getClassname()} onClick={onClick}>
-      <FontAwesomeIcon icon={type === "left" ? faAngleLeft : faAngleRight} />
-    </button>
-  );
+  return moveButtonData.map((data) => (
+    <CarouselMoveButton
+      key={data.type}
+      translateState={translateState}
+      type={data.type}
+      onClick={data.handler}
+    />
+  ));
 }
