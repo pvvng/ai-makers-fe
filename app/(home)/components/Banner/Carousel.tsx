@@ -8,14 +8,18 @@ import CarouselMoveButton from "./CarouselMoveButton";
 import { useState } from "react";
 // type
 import { ButtonData } from "@/types/carousel";
+// mock-up
+import { cardData } from "@/mock-up/bannerCardData";
 
 export default function Carousel() {
   const [translateState, setTranslateState] = useState(0);
   const { moveButtonData } = useBannerCarousel(setTranslateState);
 
   return (
-    <div className="w-10/12 relative overflow-hidden">
-      <BannerCardContainer translateState={translateState} />
+    <div className="w-10/12 relative">
+      <div className="w-full overflow-hidden">
+        <BannerCardContainer translateState={translateState} />
+      </div>
       <CarouselButtonsContainer
         translateState={translateState}
         moveButtonData={moveButtonData}
@@ -30,8 +34,8 @@ function BannerCardContainer({ translateState }: { translateState: number }) {
       className="flex justify-start items-center relative w-[200%] transition-transform duration-500"
       style={{ transform: `translateX(${translateState}%)` }}
     >
-      {Array.from({ length: 8 }).map((_, i) => (
-        <BannerCard key={i} data={i} />
+      {cardData.map((data, i) => (
+        <BannerCard key={data.title + data.content} {...data} />
       ))}
     </div>
   );
