@@ -29,9 +29,11 @@ export default function Banner() {
   const bannerDataObject = { bannerData, isLoading, isError };
 
   return (
-    <div className="w-full flex gap-2 justify-center items-center p-4 pt-10 pb-10 px-8">
-      <ListItemContainer listState={listState} setListState={setListState} />
-      <Carousel bannerDataObject = {bannerDataObject} />
+    <div className="w-full p-4 pt-10 pb-10 px-8">
+      <div className="flex gap-2 justify-center items-center">
+        <ListItemContainer listState={listState} setListState={setListState} />
+        <Carousel bannerDataObject={bannerDataObject} />
+      </div>
     </div>
   );
 }

@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <div
       className={classNames(
-        "w-full bg-white p-2 px-6 flex gap-3 justify-center items-center h-[80px] shadow-md",
+        "w-full bg-white p-2 px-10 flex gap-3 justify-center items-center h-[80px] shadow-md",
         { hidden: isHidden }
       )}
     >
