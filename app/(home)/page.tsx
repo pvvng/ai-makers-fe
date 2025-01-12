@@ -1,5 +1,7 @@
+// type
 import { Metadata } from "next";
-import Link from "next/link";
+// components
+import Banner from "./components/Banner/Banner";
 
 export const metadata: Metadata = {
   title: "홈",
@@ -7,8 +9,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="">
-      <div className="w-full p-2">123</div>
+    <div>
+      <Banner />
     </div>
   );
 }
