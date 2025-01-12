@@ -31,5 +31,5 @@ function getBadgeText(type: BadgeType) {
 
   if (type === "hot") return "인기";
 
-  return "추천";
+  return "AI 추천";
 }

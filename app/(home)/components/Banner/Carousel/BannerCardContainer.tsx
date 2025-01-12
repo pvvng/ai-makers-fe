@@ -3,9 +3,14 @@
 import { useBannerCarouselStore } from "@/store/useBannerCarouselStore";
 // components
 import BannerCard from "./BannerCard";
-import { cardData } from "@/mock-up/bannerCardData";
+// mock-up
+import { CarouselData } from "@/types/carousel";
 
-export default function BannerCardContainer() {
+export default function BannerCardContainer({
+  bannerData,
+}: {
+  bannerData: CarouselData[];
+}) {
   const { translateState } = useBannerCarouselStore();
 
   return (
@@ -13,8 +18,8 @@ export default function BannerCardContainer() {
       className="flex justify-start items-center relative w-[200%] transition-transform duration-500"
       style={{ transform: `translateX(${translateState}%)` }}
     >
-      {cardData.map((data, i) => (
-        <BannerCard key={data.title + data.content} {...data} />
+      {bannerData.map((data) => (
+        <BannerCard key={data.dataKey} cardData={data} />
       ))}
     </div>
   );
