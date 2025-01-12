@@ -11,7 +11,7 @@ import BodyExplain from "./bodyItems/BodyExplain";
 export default function JoinUsBody() {
   return (
     <form action="/api/join" method="POST">
-      <div className="bg-white p-5 mt-5 border">
+      <div className="bg-white p-5 mt-5 px-10 border">
         <BodyExplain />
         <IdInputBox />
         <PasswordInputBox />

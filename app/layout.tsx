@@ -40,7 +40,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=1024" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 min-w-[1024px]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-[1024px]`}
       >
         <Navbar />
         {children}
