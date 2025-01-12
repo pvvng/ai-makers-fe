@@ -10,7 +10,7 @@ export default function CitiesField() {
 
   return (
     <div className="md:w-3/12 w-1/2 px-1">
-      <div className="border p-2 sm:h-[300px] h-[200px] overflow-scroll shadow">
+      <div className="border p-2 h-[200px] overflow-scroll shadow">
         {selectedArea &&
           getCities(selectedArea).map((city) => (
             <LoactionButton
