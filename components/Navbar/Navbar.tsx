@@ -12,23 +12,18 @@ import classNames from "classnames";
 
 export default function Navbar() {
   const path = usePathname();
+  const isHidden = path && hiddenNavbarPath.includes(path);
 
   return (
-    <div className={getNavbarClass(path)}>
+    <div
+      className={classNames(
+        "w-full bg-white p-2 px-6 flex gap-3 justify-center items-center h-[80px] shadow-md",
+        { hidden: isHidden }
+      )}
+    >
       <NavLogo />
       <NavSearchInput />
       <NavLinks />
     </div>
   );
-}
-
-function getNavbarClass(path: string | null) {
-  if (path && hiddenNavbarPath.includes(path)) {
-    return classNames(
-      "hidden " +
-        "w-full bg-white p-2 px-6 flex gap-3 justify-center items-center h-[80px] shadow-md"
-    );
-  }
-
-  return "w-full bg-white p-2 px-6 flex gap-3 justify-center items-center h-[80px] shadow-md";
 }

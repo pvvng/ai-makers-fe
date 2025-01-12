@@ -8,7 +8,7 @@ import CarouselMoveButton from "./CarouselMoveButton";
 import { useState } from "react";
 // type
 import { ButtonData } from "@/types/carousel";
-// mock-up
+// mock-up-data
 import { cardData } from "@/mock-up/bannerCardData";
 
 export default function Carousel() {
