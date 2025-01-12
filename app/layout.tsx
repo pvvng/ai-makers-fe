@@ -9,7 +9,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 // css
 import "./globals.css";
 // components
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/Navbar/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
