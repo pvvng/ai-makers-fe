@@ -26,7 +26,7 @@ export default function SelectorButton({
   return (
     <button
       type="button"
-      className={`w-full lg:h-18 md:h-16 sm:h-14 h-12 border flex items-center justify-center transition ${
+      className={`w-full h-12 border flex items-center justify-center transition ${
         isActive ? "bg-blue-500 text-white" : "bg-white text-black"
       }`}
       onClick={handleClick}

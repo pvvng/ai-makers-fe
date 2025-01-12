@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function LogoField() {
   return (
-    <div className="sm:w-4/12 px-3 sm:border-r text-center w-full h-full relative">
+    <div className="w-4/12 px-3 border-r text-center h-full relative">
       <Image
         src="/세균.webp"
         alt="site-logo"

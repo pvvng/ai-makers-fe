@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function SignInPage() {
   return (
-    <div className="max-w-screen-xl mx-auto px-5 lg:px-48 sm:px-14">
+    <div className="px-48 bg-gray-100 p-5">
       <JoinUsHeader />
       <JoinUsBody />
     </div>

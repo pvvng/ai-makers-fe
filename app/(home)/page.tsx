@@ -1,5 +1,7 @@
+// type
 import { Metadata } from "next";
-import Link from "next/link";
+// components
+import Banner from "./components/Banner/Banner";
 
 export const metadata: Metadata = {
   title: "홈",
@@ -7,17 +9,8 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <div className="text-center">
-        <h1 className="font-extrabold text-4xl">AI-Makers</h1>
-        <Link className="hover:underline text-blue-900" href="/login">
-          로그인
-        </Link>
-        <span> | </span>
-        <Link className="hover:underline text-blue-900" href="join-us">
-          회원가입
-        </Link>
-      </div>
+    <div>
+      <Banner />
     </div>
   );
 }

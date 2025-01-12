@@ -10,7 +10,7 @@ export default function DistrctField() {
 
   return (
     <div className="md:w-6/12 w-full px-1 md:mt-0 mt-2">
-      <div className="border p-2 sm:h-[300px] h-[200px] overflow-scroll shadow">
+      <div className="border p-2 h-[200px] overflow-scroll shadow">
         {selectedCity && selectedArea && (
           <DistrictMapBox
             districtData={getDistricts(selectedArea, selectedCity)}
