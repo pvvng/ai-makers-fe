@@ -12,8 +12,8 @@ export default function SkeletonCarouselCard() {
 function SkeletonCarouselCardContent() {
   return (
     <div id="card-wrapper">
-      <div className="w-[150px] h-[16px] bg-gray-200 animate-pulse rounded" />
-      <div className="w-[180px] h-[24px] mt-1 bg-gray-200 animate-pulse rounded" />
+      <div className="w-[100px] h-[16px] bg-gray-200 animate-pulse rounded" />
+      <div className="w-[140px] h-[24px] mt-1 bg-gray-200 animate-pulse rounded" />
       <div className="w-[40px] h-[20px] mt-2 bg-gray-200 animate-pulse rounded" />
     </div>
   );

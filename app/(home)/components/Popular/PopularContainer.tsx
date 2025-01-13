@@ -9,7 +9,7 @@ import Image from "next/image";
 export default function PopularContainer() {
   return (
     <div className="w-full p-4 pt-10 pb-10 px-8 bg-gray-100">
-      <div className="flex gap-4 justify-center items-center">
+      <div className="flex gap-2 justify-center items-center">
         <PopularBannerImage />
         <Suspense fallback={<SkeletonPopularContainer />}>
           <PopularContest />

@@ -3,8 +3,9 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 /* eslint-disable import/first */
 config.autoAddCss = false;
-
+// metadata
 import type { Metadata } from "next";
+// font
 import { Geist, Geist_Mono } from "next/font/google";
 // css
 import "./globals.css";
