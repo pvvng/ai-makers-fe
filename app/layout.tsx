@@ -3,13 +3,15 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 /* eslint-disable import/first */
 config.autoAddCss = false;
-
+// metadata
 import type { Metadata } from "next";
+// font
 import { Geist, Geist_Mono } from "next/font/google";
 // css
 import "./globals.css";
 // components
 import Navbar from "@/components/Navbar/Navbar";
+import ReactQueryProvider from "@/util/provider/ReactQueryProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,14 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=1024" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-[1200px]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-w-[1280px]`}
       >
-        <Navbar />
-        {children}
+        <ReactQueryProvider>
+          <Navbar />
+          {children}
+        </ReactQueryProvider>
       </body>
     </html>
   );
