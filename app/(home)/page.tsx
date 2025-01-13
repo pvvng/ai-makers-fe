@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div>
-      {/* <AfterSignBanner /> */}
-      <BeforeSignBanner />
+      <AfterSignBanner />
+      {/* <BeforeSignBanner /> */}
       <MultiViewCarousel />
       <hr />
       <PopularContainer />

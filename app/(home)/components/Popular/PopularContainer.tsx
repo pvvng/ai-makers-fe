@@ -26,12 +26,12 @@ function PopularBannerImage() {
   return (
     <div className="relative w-2/4 h-[450px] flex flex-col gap-1">
       <div className="w-full h-2/3">
-        <BigSampleImage url="/배너샘플커비5.webp" alt="샘플이미지" />
+        <BigSampleImage url="/sample/배너샘플커비2.webp" alt="샘플이미지" />
       </div>
       <div className="w-full h-1/3 flex gap-1">
-      <SmallSampleImage url="/배너샘플커비2.webp" alt="샘플이미지" />
-        <SmallSampleImage url="/배너샘플커비3.webp" alt="샘플이미지" />
-        <SmallSampleImage url="/배너샘플커비4.webp" alt="샘플이미지" />
+        <SmallSampleImage url="/sample/배너샘플커비3.webp" alt="샘플이미지" />
+        <SmallSampleImage url="/sample/배너샘플커비4.webp" alt="샘플이미지" />
+        <SmallSampleImage url="/sample/배너샘플커비5.webp" alt="샘플이미지" />
       </div>
     </div>
   );

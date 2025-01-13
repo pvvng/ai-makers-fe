@@ -19,7 +19,7 @@ function AdvertiseImage() {
   return (
     <div className="relative w-4/6 h-full transition-all cursor-pointer">
       <Image
-        src="/배너샘플커비.webp"
+        src="/sample/배너샘플커비.webp"
         alt="배너"
         fill
         priority

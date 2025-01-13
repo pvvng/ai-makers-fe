@@ -12,10 +12,6 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
-      backgroundImage: {
-        "rocket-login": "url('/로켓로그인이미지.webp')",
-        "rocket-join-us": "url('/로켓회원가입이미지.webp')",
-      },
     },
   },
   plugins: [require("tailwindcss-textshadow")],
