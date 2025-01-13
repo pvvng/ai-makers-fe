@@ -1,0 +1,37 @@
+import { BannerPropsType } from "@/types/main-banner";
+import Image from "next/image";
+import Link from "next/link";
+
+export default function LinkImage(props: BannerPropsType) {
+  return (
+    <div
+      className="relative w-1/6 h-full rounded-2xl overflow-hidden cursor-pointer
+    bg-gradient-to-br from-blue-400 to-blue-700  
+    hover:scale-95 transition-all "
+    >
+      <Link href={props.link}>
+        <BannerImage {...props} />
+      </Link>
+    </div>
+  );
+}
+
+function BannerImage({ image, alt, label }: BannerPropsType) {
+  return (
+    <>
+      <div className="relative w-full h-full">
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          priority
+          sizes="200px"
+          className="object-cover"
+        />
+      </div>
+      <h3 className="text-shadow-lg absolute inset-0 flex items-center justify-center text-white text-3xl font-black text-center">
+        {label}
+      </h3>
+    </>
+  );
+}

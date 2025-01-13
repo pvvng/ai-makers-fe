@@ -1,5 +1,5 @@
 // components
-import SkeletonPopularContainer from "../MultiViewCarousel/Skeleton/SkeletonPopularContainer";
+import SkeletonPopularContainer from "../Skeleton/SkeletonPopularContainer";
 import PopularContest from "./PopularContest";
 // react
 import { Suspense } from "react";
@@ -8,8 +8,8 @@ import Image from "next/image";
 
 export default function PopularContainer() {
   return (
-    <div className="w-full p-4 pt-10 pb-10 px-8">
-      <div className="flex gap-2 justify-center items-center">
+    <div className="w-full p-4 pt-10 pb-10 px-8 bg-gray-100">
+      <div className="flex gap-4 justify-center items-center">
         <PopularBannerImage />
         <Suspense fallback={<SkeletonPopularContainer />}>
           <PopularContest />
@@ -25,21 +25,14 @@ export default function PopularContainer() {
 function PopularBannerImage() {
   return (
     <div className="relative w-2/4 h-[450px] flex flex-col gap-1">
-      {/* big */}
       <div className="w-full h-2/3">
-        <BigSampleImage url="/배너샘플커비.webp" alt="샘플이미지" />
+        <BigSampleImage url="/배너샘플커비5.webp" alt="샘플이미지" />
       </div>
-      {/* 2 layer */}
       <div className="w-full h-1/3 flex gap-1">
-        <SmallSampleImage url="/배너샘플커비2.webp" alt="샘플이미지" />
-        <SmallSampleImage url="/배너샘플커비4.webp" alt="세균" />
-      </div>
-      {/* 3 layer */}
-      {/* <div className="w-full h-1/3 flex gap-1">
+      <SmallSampleImage url="/배너샘플커비2.webp" alt="샘플이미지" />
         <SmallSampleImage url="/배너샘플커비3.webp" alt="샘플이미지" />
-        <SmallSampleImage url="/배너샘플커비2.webp" alt="세균" />
-        <SmallSampleImage url="/배너샘플커비4.webp" alt="세균" />
-      </div> */}
+        <SmallSampleImage url="/배너샘플커비4.webp" alt="샘플이미지" />
+      </div>
     </div>
   );
 }
@@ -57,7 +50,7 @@ function BigSampleImage({ url, alt }: { url: string; alt: string }) {
 
 function SmallSampleImage({ url, alt }: { url: string; alt: string }) {
   return (
-    <div className="relative h-full w-1/2 hover:scale-95 transition-all cursor-pointer">
+    <div className="relative h-full w-full hover:scale-95 transition-all cursor-pointer">
       <Image src={url} alt={alt} fill className="object-cover rounded-xl" />
       <div className="absolute inset-0 flex items-center justify-center text-white text-xl font-bold text-center">
         작은 배너 이미지 샘플

@@ -3,8 +3,8 @@ import { CarouselData } from "@/types/carousel";
 // components
 import CarouselCardContainer from "./CarouselCardContainer";
 import CarouselButtonsContainer from "./CarouselButtonsContainer";
-import SkeletonCardContainer from "../Skeleton/SkeletonCardContainer";
-import SkeletonErrorContainer from "../Skeleton/SkeletonErrorContainer";
+import SkeletonCardContainer from "../../Skeleton/SkeletonCardContainer";
+import SkeletonErrorContainer from "../../Skeleton/SkeletonErrorContainer";
 
 interface PropsType {
   bannerData: CarouselData[] | undefined;

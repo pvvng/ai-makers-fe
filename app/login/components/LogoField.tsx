@@ -4,7 +4,7 @@ export default function LogoField() {
   return (
     <div className="w-4/12 px-3 border-r text-center h-full relative">
       <Image
-        src="/세균.webp"
+        src="/trophy.webp"
         alt="site-logo"
         width={240}
         height={240}
