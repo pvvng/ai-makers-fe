@@ -6,7 +6,7 @@ export default function BannerCardBadge({ type }: { type: BadgeType }) {
     <span
       className={classNames(
         getBadgeClassnames(type) +
-          "border p-1 px-2 rounded-full absolute top-2 right-2 text-sm font-bold"
+          "border p-1 px-2 rounded-full absolute top-4 right-4 text-sm font-bold"
       )}
     >
       {getBadgeText(type)}
