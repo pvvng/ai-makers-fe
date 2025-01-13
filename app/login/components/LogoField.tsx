@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function LogoField() {
   return (
-    <div className="w-4/12 px-3 border-r text-center h-full relative">
+    <div className="w-1/3 px-3 text-center h-full relative">
       <Image
-        src="/banner/trophy.webp"
+        src="/banner/rocket-join-us.webp"
         alt="site-logo"
         width={240}
         height={240}
