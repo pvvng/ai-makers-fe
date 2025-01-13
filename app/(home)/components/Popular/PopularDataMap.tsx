@@ -17,13 +17,23 @@ export default function PopularDataMap({
   return (
     <div className="w-1/4 min-h-[450px] p-4 border rounded-2xl shadow bg-white flex items-center">
       <div className="w-full">
-        <h6 className="text-md font-bold ml-2 mb-2">
-          <FontAwesomeIcon icon={icon} /> <span>{name}</span>
-        </h6>
-        {popularData?.map((data, index) => (
-          <PopularCard key={data.dataKey} title={data.title} rank={index + 1} />
-        ))}
+        <HeadTitle icon={icon} name={name} />
+        <Content popularData={popularData} />
       </div>
     </div>
   );
+}
+
+function HeadTitle({ icon, name }: { icon: IconDefinition; name: string }) {
+  return (
+    <h6 className="text-md font-bold ml-2 mb-2">
+      <FontAwesomeIcon icon={icon} /> <span>{name}</span>
+    </h6>
+  );
+}
+
+function Content({ popularData }: { popularData: CarouselData[] | undefined }) {
+  return popularData?.map((data, index) => (
+    <PopularCard key={data.dataKey} title={data.title} rank={index + 1} />
+  ));
 }
