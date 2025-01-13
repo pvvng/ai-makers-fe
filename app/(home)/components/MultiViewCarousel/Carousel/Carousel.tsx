@@ -1,7 +1,7 @@
 // type
 import { CarouselData } from "@/types/carousel";
 // components
-import BannerCardContainer from "./BannerCardContainer";
+import CarouselCardContainer from "./CarouselCardContainer";
 import CarouselButtonsContainer from "./CarouselButtonsContainer";
 import SkeletonCardContainer from "../Skeleton/SkeletonCardContainer";
 import SkeletonErrorContainer from "../Skeleton/SkeletonErrorContainer";
@@ -37,8 +37,8 @@ function RenderBannerContainer({
 
   return (
     <>
-      <div className="w-full overflow-hidden">
-        <BannerCardContainer bannerData={bannerData} />
+      <div className="w-full overflow-hidden pt-1 pb-1">
+        <CarouselCardContainer bannerData={bannerData} />
       </div>
       <CarouselButtonsContainer />
     </>

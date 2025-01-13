@@ -15,7 +15,7 @@ export default function PopularDataMap({
   icon: IconDefinition;
 }) {
   return (
-    <div className="w-1/3 min-h-[450px] p-4 border rounded shadow bg-white flex items-center">
+    <div className="w-1/4 min-h-[450px] p-4 border rounded shadow bg-white flex items-center">
       <div className="w-full">
         <h6 className="text-md font-bold ml-2 mb-2">
           <FontAwesomeIcon icon={icon} /> <span>{name}</span>

@@ -2,11 +2,11 @@
 // store
 import { useBannerCarouselStore } from "@/store/useBannerCarouselStore";
 // components
-import BannerCard from "./BannerCard";
+import CarouselCard from "./CarouselCard";
 // mock-up
 import { CarouselData } from "@/types/carousel";
 
-export default function BannerCardContainer({
+export default function CarouselCardContainer({
   bannerData,
 }: {
   bannerData: CarouselData[];
@@ -19,7 +19,7 @@ export default function BannerCardContainer({
       style={{ transform: `translateX(${translateState}%)` }}
     >
       {bannerData.map((data) => (
-        <BannerCard key={data.dataKey} cardData={data} />
+        <CarouselCard key={data.dataKey} cardData={data} />
       ))}
     </div>
   );

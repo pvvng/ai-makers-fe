@@ -9,7 +9,7 @@ import { useQuery } from "@tanstack/react-query";
 // react
 import { useState } from "react";
 
-export default function Banner() {
+export default function MultiViewCarousel() {
   const [listState, setListState] = useState(0);
 
   const {
@@ -29,7 +29,7 @@ export default function Banner() {
   const bannerDataObject = { bannerData, isLoading, isError };
 
   return (
-    <div className="w-full p-4 pt-10 pb-10 px-8">
+    <div className="w-full p-4 pt-5 pb-5 px-8">
       <div className="flex gap-2 justify-center items-center">
         <ListItemContainer listState={listState} setListState={setListState} />
         <Carousel bannerDataObject={bannerDataObject} />
