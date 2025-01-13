@@ -6,7 +6,7 @@ export default function LinkImage(props: BannerPropsType) {
   return (
     <div
       className="relative w-1/6 h-full rounded-2xl overflow-hidden cursor-pointer
-    bg-gradient-to-br from-blue-400 to-blue-700  
+    bg-gradient-to-br from-blue-300 to-blue-800  
     hover:scale-95 transition-all "
     >
       <Link href={props.link}>
@@ -29,7 +29,7 @@ function BannerImage({ image, alt, label }: BannerPropsType) {
           className="object-cover"
         />
       </div>
-      <h3 className="text-shadow-lg absolute inset-0 flex items-center justify-center text-white text-3xl font-black text-center">
+      <h3 className="text-shadow-xl absolute inset-0 flex items-center justify-center text-white text-3xl font-black text-center">
         {label}
       </h3>
     </>

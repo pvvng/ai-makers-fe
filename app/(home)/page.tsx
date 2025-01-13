@@ -1,10 +1,9 @@
 // type
 import { Metadata } from "next";
 // components
-import BeforeSignBanner from "./components/Banner/BeforeSignBanner";
+import SignBanner from "./components/Banner/SignBanner";
 import MultiViewCarousel from "./components/MultiViewCarousel/MultiViewCarousel";
 import PopularContainer from "./components/Popular/PopularContainer";
-import AfterSignBanner from "./components/Banner/AfterSignBanner";
 
 export const metadata: Metadata = {
   title: "홈",
@@ -13,8 +12,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div>
-      <AfterSignBanner />
-      {/* <BeforeSignBanner /> */}
+      {/* <SignBanner type="loggedIn" /> */}
+      <SignBanner type="loggedOut" />
       <MultiViewCarousel />
       <hr />
       <PopularContainer />

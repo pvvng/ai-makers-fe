@@ -40,7 +40,13 @@ function PopularBannerImage() {
 function BigSampleImage({ url, alt }: { url: string; alt: string }) {
   return (
     <div className="relative w-full h-full hover:scale-95 transition-all cursor-pointer">
-      <Image src={url} alt={alt} fill className="object-cover rounded-2xl" />
+      <Image
+        src={url}
+        alt={alt}
+        fill
+        className="object-cover rounded-2xl"
+        sizes="600px"
+      />
       <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold text-center">
         큰 배너 이미지 샘플
       </div>
@@ -51,7 +57,13 @@ function BigSampleImage({ url, alt }: { url: string; alt: string }) {
 function SmallSampleImage({ url, alt }: { url: string; alt: string }) {
   return (
     <div className="relative h-full w-full hover:scale-95 transition-all cursor-pointer">
-      <Image src={url} alt={alt} fill className="object-cover rounded-xl" />
+      <Image
+        src={url}
+        alt={alt}
+        fill
+        className="object-cover rounded-xl"
+        sizes="200px"
+      />
       <div className="absolute inset-0 flex items-center justify-center text-white text-xl font-bold text-center">
         작은 배너 이미지 샘플
       </div>
