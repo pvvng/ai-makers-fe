@@ -26,7 +26,7 @@ export default function ListItemContainer({
 }) {
   return (
     <div className="w-2/12">
-      <ul className="p-2 cursor-pointer text-gray-600">
+      <ul className="p-2 cursor-pointer text-gray-600 flex flex-col justify-center gap-2 h-[180px]">
         <ListMap listState={listState} setListState={setListState} />
       </ul>
     </div>
@@ -46,9 +46,13 @@ function ListMap({
     return (
       <li
         key={listItem.label}
-        className={classNames("mb-2 p-2 px-4 font-bold transition-all", {
-          "rounded bg-blue-500 text-white shadow-lg": isActive,
-        })}
+        className={classNames(
+          "p-3 px-4 font-bold transition-all rounded hover:bg-gray-200",
+          {
+            "rounded bg-gradient-to-tl from-blue-400 to-blue-700 text-white shadow-lg":
+              isActive,
+          }
+        )}
         onClick={() => setListState(index)}
       >
         <FontAwesomeIcon icon={listItem.icon} /> {listItem.label}

@@ -4,11 +4,9 @@ import LinkImage from "./LinkImage";
 import {
   afterSignImagePropsData,
   beforeSignImagePropsData,
-} from "@/constants/main-banner";
+} from "@/constants/mainBanner";
 // next
 import Image from "next/image";
-// classnames
-import classNames from "classnames";
 
 export default function SignBanner({
   type,
@@ -20,8 +18,8 @@ export default function SignBanner({
 
   return (
     <div className="w-full p-4 pt-10 pb-5 px-8">
-      <div className="flex justify-center items-center gap-2 h-[200px]">
-        <AdvertiseImage type={type} />
+      <div className="flex justify-center items-center gap-2 h-[120px]">
+        <AdvertiseImage />
         {imagePropsData.map((imageData) => (
           <LinkImage key={imageData.image} {...imageData} />
         ))}
@@ -30,19 +28,9 @@ export default function SignBanner({
   );
 }
 
-function AdvertiseImage({ type }: { type: "loggedIn" | "loggedOut" }) {
-  const imageWidthClass = classNames({
-    "w-3/6": type === "loggedIn",
-    "w-4/6": type === "loggedOut",
-  });
-
+function AdvertiseImage() {
   return (
-    <div
-      className={classNames(
-        "relative h-full transition-all cursor-pointer",
-        imageWidthClass
-      )}
-    >
+    <div className="w-2/3 relative h-full transition-all cursor-pointer">
       <Image
         src="/sample/배너샘플커비.webp"
         alt="배너"

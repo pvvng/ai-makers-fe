@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div>
-      {/* <SignBanner type="loggedIn" /> */}
-      <SignBanner type="loggedOut" />
+      <SignBanner type="loggedIn" />
+      {/* <SignBanner type="loggedOut" /> */}
       <MultiViewCarousel />
       <PopularContainer />
       <Footer />
