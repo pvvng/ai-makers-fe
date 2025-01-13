@@ -8,8 +8,14 @@ const endpoints = [
 
 export default async function fetchBannerData(index: number) {
   try {
-    const bannerDataResponse = await fetch(endpoints[index]);
-    
+    const bannerDataResponse = await fetch(endpoints[index], {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      cache: "force-cache",
+    });
+
     if (!bannerDataResponse.ok) {
       throw new Error("Failed to fetch data");
     }

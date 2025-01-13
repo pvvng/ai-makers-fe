@@ -1,0 +1,65 @@
+// components
+import SkeletonPopularContainer from "../Banner/Skeleton/SkeletonPopularContainer";
+import PopularContest from "./PopularContest";
+// react
+import { Suspense } from "react";
+import PopularStudy from "./PopularStudy";
+import Image from "next/image";
+
+export default function PopularContainer() {
+  return (
+    <div className="w-full p-4 pt-10 pb-10 px-8 border-t">
+      <div className="flex gap-2 justify-center items-center">
+        <PopularBannerImage />
+        <Suspense fallback={<SkeletonPopularContainer />}>
+          <PopularContest />
+        </Suspense>
+        <Suspense fallback={<SkeletonPopularContainer />}>
+          <PopularStudy />
+        </Suspense>
+      </div>
+    </div>
+  );
+}
+
+function PopularBannerImage() {
+  return (
+    <div className="relative w-1/3 h-[450px] flex flex-col gap-1">
+      {/* big */}
+      <BigSampleImage url="/배너샘플커비2.webp" alt="샘플이미지" />
+      {/* 2 layer */}
+      <div className="w-full h-1/2 flex gap-1">
+        <SmallSampleImage url="/배너샘플커비.webp" alt="샘플이미지" />
+        <SmallSampleImage url="/배너샘플커비3.webp" alt="세균" />
+      </div>
+      {/* 3 layer */}
+      <div className="w-full h-1/2 flex gap-1">
+        <SmallSampleImage url="/배너샘플커비.webp" alt="샘플이미지" />
+        <SmallSampleImage url="/배너샘플커비2.webp" alt="세균" />
+        <SmallSampleImage url="/배너샘플커비4.webp" alt="세균" />
+      </div>
+    </div>
+  );
+}
+
+function BigSampleImage({ url, alt }: { url: string; alt: string }) {
+  return (
+    <div className="relative h-1/2 w-full hover:scale-95 transition-all cursor-pointer">
+      <Image src={url} alt={alt} fill className="object-cover rounded-2xl" />
+      <div className="absolute inset-0 flex items-center justify-center text-white text-3xl font-bold text-center">
+        큰 배너 이미지 샘플
+      </div>
+    </div>
+  );
+}
+
+function SmallSampleImage({ url, alt }: { url: string; alt: string }) {
+  return (
+    <div className="relative h-full w-1/2 hover:scale-95 transition-all cursor-pointer">
+      <Image src={url} alt={alt} fill className="object-cover rounded-xl" />
+      <div className="absolute inset-0 flex items-center justify-center text-white text-xl font-bold text-center">
+        작은 배너 이미지 샘플
+      </div>
+    </div>
+  );
+}

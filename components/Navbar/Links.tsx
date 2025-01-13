@@ -11,7 +11,7 @@ export default function NavLinks() {
       </Link>
       <Link
         href="/about-us"
-        className="ml-2 p-1 px-2 border border-gray-600 text-gray-600 font-medium rounded"
+        className="ml-2 p-1 px-3 border border-gray-600 text-gray-600 font-medium rounded-full"
       >
         더 알아보기
       </Link>
