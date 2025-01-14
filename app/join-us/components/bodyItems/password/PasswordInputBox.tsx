@@ -4,7 +4,7 @@
 import PasswordInput from "./PasswordInput";
 import PasswordVisibilityToggle from "./PasswordVisibilityToggle";
 import PasswordCheckInput from "./PasswordCheckInput";
-import PasswordValidateField from "./PasswordValidateField";
+import PasswordValidateField from "../validateField/PasswordValidateField";
 // react
 import { useState } from "react";
 

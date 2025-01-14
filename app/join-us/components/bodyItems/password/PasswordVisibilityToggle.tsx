@@ -18,12 +18,11 @@ export default function PasswordVisibilityToggle({
   };
 
   return (
-    <div className="sm:w-2/12 w-4/12 text-center">
+    <div className="w-4/12 text-center">
       <input
         id="check-button"
         className="mx-2"
         type="checkbox"
-        required
         onChange={checkBoxHandler}
       />
       <label htmlFor="check-button" className="text-sm">

@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function JoinUsHeader() {
   return (
     <div id="header">
-      <HeaderLogo />
       <HeaderLinks />
+      <HeaderLogo />
     </div>
   );
 }
@@ -15,7 +15,7 @@ function HeaderLinks() {
       <Link href="/login">로그인</Link>
       <span> | </span>
       <Link href="/" className="text-end">
-        홈
+        홈화면으로
       </Link>
     </div>
   );
