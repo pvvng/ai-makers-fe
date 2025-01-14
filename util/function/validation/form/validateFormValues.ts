@@ -1,10 +1,10 @@
 // validation functions
-import validateId from "./joinUs/id";
-import validatePassword from "./joinUs/password";
-import validateNickname from "./joinUs/nickname";
-import validateBirth from "./joinUs/birth";
-import validateSelectValue from "./joinUs/selectedValue";
-import validateLanguageDayLocationValue from "./joinUs/languageDayLocationValue";
+import validateId from "../joinUs/id";
+import validatePassword from "../joinUs/password";
+import validateNickname from "../joinUs/nickname";
+import validateBirth from "../joinUs/birth";
+import validateSelectValue from "../joinUs/selectedValue";
+import validateLanguageDayLocationValue from "../joinUs/languageDayLocationValue";
 // constants
 import {
   AVAILABLE_DAY_LABEL,

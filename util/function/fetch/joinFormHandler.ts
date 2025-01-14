@@ -1,6 +1,6 @@
 import { FormElment, FormFieldName, FormValues } from "@/types/form";
 import { FormEvent } from "react";
-import { validateFormValues } from "../validation/validateFormValues";
+import { validateFormValues } from "../validation/form/validateFormValues";
 import fetchJoinUs from "./fetchJoinUs";
 
 export function joinFormHandler(e: FormEvent<HTMLButtonElement>) {

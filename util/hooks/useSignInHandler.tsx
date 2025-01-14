@@ -1,5 +1,5 @@
 // function
-import getForm from "../function/validation/validateForm";
+import getForm from "../function/validation/form/validateForm";
 // store
 import useCheckboxStore from "@/store/useCheckBoxStore";
 // type
