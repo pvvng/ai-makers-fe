@@ -19,3 +19,19 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.blue-gradient-tl {
+  @apply rounded bg-gradient-to-tl from-blue-300 to-blue-700;
+}
+
+.hover\:blue-gradient-tl:hover {
+  @apply bg-gradient-to-tl from-blue-300 to-blue-700;
+}
+
+.blue-gradient-br {
+  @apply bg-gradient-to-br from-blue-300 to-blue-800 
+}
+
+.hover\:blue-gradient-br:hover{
+  @apply bg-gradient-to-br from-blue-300 to-blue-800 
+}
