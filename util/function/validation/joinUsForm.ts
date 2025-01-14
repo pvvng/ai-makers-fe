@@ -1,22 +1,17 @@
 // constants
-import { nicgkNameRegex } from "@/constants/validation/regex";
+import { idRegex, nicgkNameRegex } from "@/constants/validation/regex";
 // validation functions
 import {
   validatePasswordHasSpace,
   validatePasswordLength,
   validatePasswordRegex,
 } from "./password";
-import { validateIdHasSpace, validateIdLength, validateIdRegex } from "./id";
 // error messages
 import {
   BIRTH_INVALID_ERROR_MESSAGE,
   BIRTH_LENGTH_ERROR_MESSAGE,
   BIRTH_RANGE_ERROR_MESSAGE,
   BIRTH_RULE_ERROR_MESSAGE,
-  ID_INVALID_ERROR_MESSAGE,
-  ID_LENGTH_ERROR_MESSAGE,
-  ID_RULE_ERROR_MESSAGE,
-  ID_SPACE_ERROR_MESSAGE,
   NICKNAME_INVALID_ERROR_MESSAGE,
   NICKNAME_LENGTH_ERROR_MESSAGE,
   NICKNAME_RULE_ERROR_MESSAGE,
@@ -37,22 +32,27 @@ import {
   MAX_BIRTH_LENGTH,
   MIN_BITRH_DAY,
 } from "@/constants/validation/length/birthLength";
+import {
+  MAX_ID_LENGTH,
+  MIN_ID_LENGTH,
+} from "@/constants/validation/length/idLength";
+import { INVALID_SPACE, INVALID_STRING } from "@/constants/validation/invalidString";
 
 export function validateId(id: string) {
   if (!id) {
-    return ID_INVALID_ERROR_MESSAGE;
+    return "아이디를 입력해주세요.";
   }
 
-  if (!validateIdHasSpace(id)) {
-    return ID_SPACE_ERROR_MESSAGE;
+  if (id === INVALID_STRING || id.includes(INVALID_SPACE)) {
+    return "아이디에 공백을 포함할 수 없습니다.";
   }
 
-  if (!validateIdRegex(id)) {
-    return ID_RULE_ERROR_MESSAGE;
+  if (!idRegex.test(id)) {
+    return "아이디는 특수문자를 제외하고 영문, 숫자를 포함해주세요.";
   }
 
-  if (!validateIdLength(id)) {
-    return ID_LENGTH_ERROR_MESSAGE;
+  if (id.length < MIN_ID_LENGTH || id.length > MAX_ID_LENGTH) {
+    return "아이디는 6자 이상 20자 이하로 입력해주세요.";
   }
 
   return null;
@@ -116,7 +116,6 @@ export function validateBirth(birth: string) {
   }
 
   if (birth.length !== MAX_BIRTH_LENGTH) {
-    console.log(birth.length);
     return BIRTH_LENGTH_ERROR_MESSAGE;
   }
 
