@@ -1,3 +1,6 @@
+// func
+import getValidateResultObject from "../getValidateResultObject";
+// constant
 import {
   ID_INVALID_ERROR_MESSAGE,
   ID_LENGTH_ERROR_MESSAGE,
@@ -11,7 +14,7 @@ import {
 
 export const idRegex = /^(?![0-9]+$)(?=[a-zA-Z0-9]*$)(?=.*[a-zA-Z])(?=.*\d).+$/;
 
-export function validateId(id: string) {
+export default function validateId(id: string) {
   const idValidationResult = [
     validateIdExist(id),
     validateIdLength(id),
@@ -29,7 +32,7 @@ export function validateId(id: string) {
 }
 
 export function validateIdExist(id: string) {
-  const idExistValidation = !!id;
+  const idExistValidation = !id;
 
   return getValidateResultObject(!idExistValidation, ID_INVALID_ERROR_MESSAGE);
 }
@@ -48,11 +51,7 @@ export function validateIdRegex(id: string) {
 }
 
 export function validateIdHasSpace(id: string) {
-  const idHasSpaceValidation = !id.includes(" ");
+  const idHasSpace = id.includes(" ");
 
-  return getValidateResultObject(idHasSpaceValidation, ID_SPACE_ERROR_MESSAGE);
-}
-
-export function getValidateResultObject(isValid: boolean, message: string) {
-  return { ok: isValid, message: message };
+  return getValidateResultObject(!idHasSpace, ID_SPACE_ERROR_MESSAGE);
 }
