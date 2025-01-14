@@ -12,11 +12,11 @@ export default function NavSearchInput() {
   }
 
   return (
-    <div className="w-6/12">
+    <div className="w-2/3">
       <div className="w-full relative max-w-[480px]">
         <input
           ref={inputRef}
-          className="h-[40px] rounded border border-blue-500 w-full px-2 pr-10"
+          className="h-[40px] rounded border-2 border-blue-500 w-full px-3 pr-10"
           placeholder="공모전 / 스터디 찾기"
           onKeyDown={(e) => {
             e.key === "Enter" && handleButtonClick();
