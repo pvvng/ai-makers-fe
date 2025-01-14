@@ -56,7 +56,7 @@ function getValidationResults(formObject: Record<FormFieldName, string>) {
   ];
 }
 
-export function loopValidationResults(validationResults: ValidationResultType) {
+function loopValidationResults(validationResults: ValidationResultType) {
   let validation = true;
 
   for (const result of validationResults) {
