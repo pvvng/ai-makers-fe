@@ -4,11 +4,7 @@ import Link from "next/link";
 
 export default function LinkImage(props: BannerPropsType) {
   return (
-    <div
-      className="relative w-1/12 h-full rounded-2xl overflow-hidden cursor-pointer
-    bg-gradient-to-br from-blue-300 to-blue-800  
-    hover:scale-95 transition-all "
-    >
+    <div className="relative w-1/12 h-full rounded-2xl overflow-hidden cursor-pointer blue-gradient-br hover:scale-95 transition-all ">
       <Link href={props.link}>
         <BannerImage {...props} />
       </Link>

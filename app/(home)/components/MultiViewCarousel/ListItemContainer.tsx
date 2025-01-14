@@ -49,8 +49,7 @@ function ListMap({
         className={classNames(
           "p-3 px-4 font-bold transition-all rounded hover:bg-gray-200",
           {
-            "rounded bg-gradient-to-tl from-blue-400 to-blue-700 text-white shadow-lg":
-              isActive,
+            "blue-gradient-tl text-white": isActive,
           }
         )}
         onClick={() => setListState(index)}
