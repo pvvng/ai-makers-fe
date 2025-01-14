@@ -20,7 +20,11 @@ export default function CarouselMoveButton({
   onClick: () => void;
 }) {
   return (
-    <button className={getClassname(type, translateState)} onClick={onClick}>
+    <button
+      className={getClassname(type, translateState)}
+      onClick={onClick}
+      aria-label={`${type}-carousel-button`}
+    >
       <FontAwesomeIcon icon={type === "left" ? faAngleLeft : faAngleRight} />
     </button>
   );

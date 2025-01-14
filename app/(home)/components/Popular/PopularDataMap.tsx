@@ -26,9 +26,9 @@ export default function PopularDataMap({
 
 function HeadTitle({ icon, name }: { icon: IconDefinition; name: string }) {
   return (
-    <h6 className="text-md font-bold ml-2 mb-2">
+    <p className="text-md font-bold ml-2 mb-2">
       <FontAwesomeIcon icon={icon} /> <span>{name}</span>
-    </h6>
+    </p>
   );
 }
 
