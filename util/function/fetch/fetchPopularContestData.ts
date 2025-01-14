@@ -23,7 +23,9 @@ export default async function fetchPopularContestData() {
       await popularContestResponse.json();
 
     return popularContestData;
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
+
+    throw new Error(error);
   }
 }

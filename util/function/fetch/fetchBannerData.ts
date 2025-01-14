@@ -22,7 +22,9 @@ export default async function fetchBannerData(index: number) {
 
     const bannerData: CarouselData[] = await bannerDataResponse.json();
     return bannerData;
-  } catch (error) {
+  } catch (error: any) {
     console.log(error);
+
+    throw new Error(error);
   }
 }
