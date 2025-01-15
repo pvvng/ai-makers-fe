@@ -36,23 +36,18 @@ function createFormObject(formValues: FormValues) {
 }
 
 function getValidationResults(formObject: Record<FormFieldName, string>) {
-  const { id, password, confirmPassword } = formObject;
-  const { nickname, birth } = formObject;
-  const { gender, purpose, interest, contest } = formObject;
-  const { language, day, location } = formObject;
-
   return [
-    validateId(id),
-    validatePassword(password, confirmPassword),
-    validateNickname(nickname),
-    validateBirth(birth),
-    validateSelectValue(gender, GENDER_LABEL),
-    validateSelectValue(purpose, PURPOSE_LABEL),
-    validateSelectValue(interest, INTEREST_LABEL),
-    validateSelectValue(contest, CONTEST_LABEL),
-    validateLanguageDayLocationValue(language, AVAILABLE_LANGUAGE_LABEL),
-    validateLanguageDayLocationValue(day, AVAILABLE_DAY_LABEL),
-    validateLanguageDayLocationValue(location, AVAILABLE_LOCATION_LABEL),
+    validateId(formObject.id),
+    validatePassword(formObject.password, formObject.confirmPassword),
+    validateNickname(formObject.nickname),
+    validateBirth(formObject.birth),
+    validateSelectValue(formObject.gender, GENDER_LABEL),
+    validateSelectValue(formObject.purpose, PURPOSE_LABEL),
+    validateSelectValue(formObject.interest, INTEREST_LABEL),
+    validateSelectValue(formObject.contest, CONTEST_LABEL),
+    validateLanguageDayLocationValue(formObject.language, AVAILABLE_LANGUAGE_LABEL),
+    validateLanguageDayLocationValue(formObject.day, AVAILABLE_DAY_LABEL),
+    validateLanguageDayLocationValue(formObject.location, AVAILABLE_LOCATION_LABEL),
   ];
 }
 
