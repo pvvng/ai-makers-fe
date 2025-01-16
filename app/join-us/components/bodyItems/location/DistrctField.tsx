@@ -3,7 +3,7 @@
 import LoactionButton from "./LoactionButton";
 import useLocationStore from "@/store/useLocationStore";
 // data get function
-import { getDistricts } from "@/util/function/location/getAreaData";
+import { getDistricts } from "@/util/function/getAreaData";
 
 export default function DistrctField() {
   const { selectedCity, selectedArea } = useLocationStore();

@@ -3,7 +3,7 @@
 import LoactionButton from "./LoactionButton";
 import useLocationStore from "@/store/useLocationStore";
 // data get function
-import { getCities } from "@/util/function/location/getAreaData";
+import { getCities } from "@/util/function/getAreaData";
 
 export default function CitiesField() {
   const { selectedArea, citiesHandler } = useLocationStore();

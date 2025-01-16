@@ -24,7 +24,7 @@ function HeaderLinks() {
 function HeaderLogo() {
   return (
     <div className="text-center mt-5">
-      <h1 className="text-3xl font-bold">AI-Makers</h1>
+      <h1 className="text-3xl font-bold">LOGO</h1>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import LoactionButton from "./LoactionButton";
 import useLocationStore from "@/store/useLocationStore";
 // data get function
-import { areaKeys } from "@/util/function/location/getAreaData";
+import { areaKeys } from "@/util/function/getAreaData";
 
 export default function AreaField() {
   const { areaHandler } = useLocationStore();

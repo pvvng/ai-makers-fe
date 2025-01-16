@@ -2,37 +2,26 @@
 // components
 import ListItemContainer from "./ListItemContainer";
 import Carousel from "./Carousel/Carousel";
-// fetch func
-import fetchBannerData from "@/util/function/fetch/fetchBannerData";
-// react-query
-import { useQuery } from "@tanstack/react-query";
+// custom hook
+import useBannerData from "@/util/hooks/useBannerData";
 // react
 import { useState } from "react";
 
 export default function MultiViewCarousel() {
   const [listState, setListState] = useState(0);
 
-  const {
-    data: bannerData,
-    isLoading,
-    isError,
-  } = useQuery({
-    queryKey: ["bannerData", listState],
-    queryFn: () => fetchBannerData(listState),
-    enabled: listState !== null,
-    retry: false,
-    refetchOnWindowFocus: false,
-    staleTime: 60 * 60 * 1000,
-    gcTime: 60 * 60 * 1000,
-  });
-
-  const bannerDataObject = { bannerData, isLoading, isError };
+  const bannerDataQuery = useBannerData(listState);
+  const bannerDataPros = {
+    bannerData: bannerDataQuery.data,
+    isLoading: bannerDataQuery.isLoading,
+    isError :bannerDataQuery.isError,
+  };
 
   return (
     <div className="w-full p-4 pt-5 pb-5 px-8">
       <div className="flex gap-2 justify-center items-center">
         <ListItemContainer listState={listState} setListState={setListState} />
-        <Carousel bannerDataObject={bannerDataObject} />
+        <Carousel bannerDataObject={bannerDataPros} />
       </div>
     </div>
   );

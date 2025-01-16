@@ -2,7 +2,7 @@
 
 import useJoinFormHandler from "@/util/hooks/useJoinFormHandler";
 
-export default function JoinButton() {
+export default function SubmitButton() {
   const { joinFormHandler } = useJoinFormHandler();
 
   return (

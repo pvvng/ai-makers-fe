@@ -5,9 +5,9 @@ import { useSelectorStore } from "@/store/useSelectorStore";
 import { FormElment, FormFieldName, FormValues } from "@/types/form";
 import { FormEvent } from "react";
 // functions
-import { validateFormValues } from "../function/validation/validateFormValues";
+import { validateFormValues } from "../function/validation/form/validateFormValues";
 import fetchJoinUs from "../function/fetch/fetchJoinUs";
-import getForm from "../function/validation/validateForm";
+import getForm from "../function/validation/form/validateForm";
 
 export default function useJoinFormHandler() {
   const storeValue = useGetStoreValue();
