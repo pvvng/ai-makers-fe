@@ -1,6 +1,5 @@
+import { APP_URL } from "@/constants/url";
 import { CarouselData } from "@/types/carousel";
-
-const APP_URL = process.env.NEXTAUTH_URL || "";
 
 export default async function fetchPopularStudyData() {
   try {

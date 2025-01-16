@@ -6,21 +6,14 @@ import {
 
 export default function SkeletonContent() {
   return (
-    <div className="w-5/6 rounded-tl-2xl shadow-lg overflow-hidden">
-      <BackgroundBox />
-      <div className="p-4 px-8 flex gap-10">
-        <SkeltonUserImage />
-        <div className="w-3/4">
-          <SkeletonUserNameExplainInfo />
-          <SkeletonUserInfoBadge />
-        </div>
+    <div className="p-4 px-8 flex gap-10">
+      <SkeltonUserImage />
+      <div className="w-3/4">
+        <SkeletonUserNameExplainInfo />
+        <SkeletonUserInfoBadge />
       </div>
     </div>
   );
-}
-
-function BackgroundBox() {
-  return <div className="w-full bg-gray-200 animate-pulse h-48" />;
 }
 
 function SkeltonUserImage() {

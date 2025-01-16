@@ -1,9 +1,10 @@
+import { APP_URL } from "@/constants/url";
 import { UserData } from "@/types/userdata";
 
 export default async function fetchUserData() {
   try {
     const userdataResponse = await fetch(
-      `${process.env.NEXTAUTH_URL}/api/user`,
+      `${APP_URL}/api/user`,
       {
         method: "GET",
         headers: {
