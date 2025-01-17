@@ -4,8 +4,6 @@ import StudyCard from "./StudyCard/StudyCard";
 import StudiesComponentHeader from "./StudiesComponentHeader";
 // type
 import { UserStudies, UserStudy } from "@/types/userStudy";
-// constant
-import { myPageCardHeight } from "@/constants/myPageCard";
 
 export default async function Studies() {
   const userStudies: UserStudies = await fetchUserStudy();
@@ -39,9 +37,7 @@ function UserStudiesMap({ userStudies }: { userStudies: UserStudies }) {
 function NullStudyCard() {
   return (
     <div className="w-1/2 px-1 mt-2">
-      <div
-        className={`w-full h-[${myPageCardHeight}px] rounded-2xl border shadow flex justify-center items-center`}
-      >
+      <div className="w-full h-[160px] rounded-2xl border shadow flex justify-center items-center">
         가입한 스터디가 없습니다.
       </div>
     </div>

@@ -1,5 +1,3 @@
-// constant
-import { myPageCardHeight } from "@/constants/myPageCard";
 // icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
@@ -9,9 +7,7 @@ import Image from "next/image";
 export default function ScrapedCard() {
   return (
     <div className="w-1/2 px-1">
-      <div
-        className={`bg-white h-[${myPageCardHeight}px] border rounded-2xl shadow p-2 flex gap-3 justify-center relative mt-2`}
-      >
+      <div className="bg-white h-[160px] border rounded-2xl shadow p-2 flex gap-3 justify-center relative mt-2">
         <ScrapedCardImage />
         <ScrapedCardContent />
         <FontAwesomeIcon

@@ -1,7 +1,5 @@
 // component
 import StudiesComponentHeader from "../content/Studies/StudiesComponentHeader";
-// constant
-import { myPageCardHeight } from "@/constants/myPageCard";
 
 export default function SkeletonStudies() {
   return (
@@ -27,9 +25,7 @@ function CardMapContainer() {
 function SkeletonStudyCard() {
   return (
     <div className="w-1/2 px-1 mt-2">
-      <div
-        className={`w-full h-[${myPageCardHeight}px] rounded-2xl border shadow bg-gray-200 animate-pulse`}
-      />
+      <div className="w-full h-[160px] rounded-2xl border shadow bg-gray-200 animate-pulse" />
     </div>
   );
 }
