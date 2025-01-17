@@ -24,7 +24,5 @@ export default async function fetchBannerData(index: number) {
     return bannerData;
   } catch (error: any) {
     console.log(error);
-
-    throw new Error(error);
   }
 }

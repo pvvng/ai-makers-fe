@@ -1,4 +1,4 @@
-import { userStudy } from "@/mock-up/userData";
+import { userScapedStudy, userScrapedContest, userStudy } from "@/mock-up/userData";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async function handler(
@@ -9,5 +9,5 @@ export default async function handler(
 
   // return res.status(500).json({ message: "에러 발생함" });
 
-  return res.status(200).json(userStudy);
+  return res.status(200).json(userScrapedContest);
 }

@@ -12,7 +12,9 @@ export default async function fetchUserStudy() {
     });
 
     if (!userStudiesResponse.ok) {
-      throw new Error("데이터 확인 실패요");
+      console.log("데이터 확인 실패요");
+
+      return;
     }
 
     const userStudies: UserStudies = await userStudiesResponse.json();
@@ -20,7 +22,5 @@ export default async function fetchUserStudy() {
     return userStudies;
   } catch (error: any) {
     console.log(error);
-
-    throw new Error(error);
   }
 }

@@ -1,16 +1,23 @@
 // coponent
 import fetchUserStudy from "@/util/function/fetch/fetchUserStudy";
 import StudyCard from "./StudyCard/StudyCard";
-import StudiesComponentHeader from "./StudiesComponentHeader";
+import ErrorContainer from "../ErrorContainer";
+import MyPageComponentHeader from "../MyPageComponentHeader";
 // type
 import { UserStudies, UserStudy } from "@/types/userStudy";
+// icon
+import { faBook } from "@fortawesome/free-solid-svg-icons";
 
 export default async function Studies() {
-  const userStudies: UserStudies = await fetchUserStudy();
+  const userStudies: UserStudies | undefined = await fetchUserStudy();
+
+  if (!userStudies) {
+    return <ErrorContainer label="내 스터디" />;
+  }
 
   return (
     <div className="p-4 px-8">
-      <StudiesComponentHeader studyCount={userStudies.length} />
+      <MyPageComponentHeader icon={faBook} label="내 스터디" />
       <div className="flex flex-wrap justify-start items-center">
         <UserStudiesMap userStudies={userStudies} />
       </div>

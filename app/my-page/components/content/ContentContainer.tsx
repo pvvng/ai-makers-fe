@@ -1,12 +1,14 @@
 // component
 import UserInfo from "./UserInfo/UserInfo";
 import Studies from "./Studies/Studies";
-import Scrap from "./Scrap/Scrap";
 // skeleton component
 import SkeletonContent from "../skeleton/SkeletonContent";
-import SkeletonStudies from "../skeleton/SkeletonStudyCard";
+import SkeletonStudies from "../skeleton/SkeletonStudies";
 // react
 import { Suspense } from "react";
+import ScrapedStudy from "./Scrap/ScrapedStudy";
+import SkeletonScrap from "../skeleton/SkeletonScrap";
+import ScrapedContest from "./Scrap/ScrapedContest";
 
 export default function ContentContainer() {
   return (
@@ -18,8 +20,12 @@ export default function ContentContainer() {
       <Suspense fallback={<SkeletonStudies />}>
         <Studies />
       </Suspense>
-      <Scrap type="study" />
-      <Scrap type="contest" />
+      <Suspense fallback={<SkeletonScrap label="스크랩한 스터디" />}>
+        <ScrapedStudy />
+      </Suspense>
+      <Suspense fallback={<SkeletonScrap label="스크랩한 공모전" />}>
+        <ScrapedContest />
+      </Suspense>
     </div>
   );
 }
