@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
   faBookmark,
@@ -5,12 +6,11 @@ import {
   faUser,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const sideBarItems = [
   { icon: faUser, label: "내 프로필" },
   { icon: faBook, label: "스터디" },
-  { icon: faUserGroup, label: "친구" },
+  // { icon: faUserGroup, label: "친구" },
   { icon: faBookmark, label: "스크랩" },
   { icon: faGear, label: "설정" },
 ];

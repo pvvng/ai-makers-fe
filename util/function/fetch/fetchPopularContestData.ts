@@ -1,6 +1,5 @@
+import { APP_URL } from "@/constants/url";
 import { CarouselData } from "@/types/carousel";
-
-const APP_URL = process.env.NEXTAUTH_URL || "";
 
 export default async function fetchPopularContestData() {
   try {
@@ -16,7 +15,8 @@ export default async function fetchPopularContestData() {
     );
 
     if (!popularContestResponse.ok) {
-      throw new Error("데이터 확인 실패요");
+      console.log("데이터 확인 실패요");
+      return; 
     }
 
     const popularContestData: CarouselData[] =
@@ -25,7 +25,5 @@ export default async function fetchPopularContestData() {
     return popularContestData;
   } catch (error: any) {
     console.log(error);
-
-    throw new Error(error);
   }
 }

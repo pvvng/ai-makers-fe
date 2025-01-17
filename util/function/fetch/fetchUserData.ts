@@ -1,9 +1,10 @@
+import { APP_URL } from "@/constants/url";
 import { UserData } from "@/types/userdata";
 
 export default async function fetchUserData() {
   try {
     const userdataResponse = await fetch(
-      `${process.env.NEXTAUTH_URL}/api/user`,
+      `${APP_URL}/api/user`,
       {
         method: "GET",
         headers: {
@@ -14,7 +15,7 @@ export default async function fetchUserData() {
     );
 
     if (!userdataResponse.ok) {
-      throw new Error("데이터 확인 실패요");
+      console.log("데이터 확인 실패요");
     }
 
     const userdata: UserData = await userdataResponse.json();
@@ -22,7 +23,5 @@ export default async function fetchUserData() {
     return userdata;
   } catch (error: any) {
     console.log(error);
-
-    throw new Error(error);
   }
 }

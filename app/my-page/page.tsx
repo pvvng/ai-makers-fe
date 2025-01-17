@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function Contest() {
   return (
-    <div className="w-full p-4 pt-14 pb-10 px-24">
+    <div className="w-full p-4 pt-14 pb-10 px-20">
       <div className="flex justify-center items-start gap-10">
         <SideBar />
         <ContentContainer />

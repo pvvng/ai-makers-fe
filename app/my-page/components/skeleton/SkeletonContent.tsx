@@ -4,7 +4,7 @@ import {
   AVAILABLE_LOCATION_LABEL,
 } from "@/constants/validation/selectValueLabel";
 
-export default function ContentSkeleton() {
+export default function SkeletonContent() {
   return (
     <div className="p-4 px-8 flex gap-10">
       <SkeltonUserImage />
