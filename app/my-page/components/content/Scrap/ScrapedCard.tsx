@@ -3,16 +3,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 // next
 import Image from "next/image";
+import { CarouselData } from "@/types/carousel";
 
-export default function ScrapedCard() {
+export default function ScrapedCard(props: CarouselData) {
   return (
     <div className="w-1/2 px-1">
       <div className="bg-white h-[160px] border rounded-2xl shadow p-2 flex gap-3 justify-center relative mt-2">
         <ScrapedCardImage />
-        <ScrapedCardContent />
+        <ScrapedCardContent name={props.title} content={props.content} />
         <FontAwesomeIcon
           icon={faBookmark}
-          className="text-gray-400 absolute top-4 right-4"
+          className="text-amber-400 absolute top-4 right-4"
         />
       </div>
     </div>
@@ -23,7 +24,7 @@ function ScrapedCardImage() {
   return (
     <div className="w-1/3 h-full relative">
       <Image
-        src="/coin/coin.webp"
+        src="/banner/rocket-login.webp"
         alt="test-img"
         fill
         priority
@@ -34,12 +35,20 @@ function ScrapedCardImage() {
   );
 }
 
-function ScrapedCardContent() {
+function ScrapedCardContent({
+  name,
+  content,
+}: {
+  name: string;
+  content: string;
+}) {
   return (
     <div className="w-2/3 flex flex-col gap-2 justify-center">
-      <p className="text-lg font-semibold">공모전이름</p>
-      <p>기업이름</p>
-      <p>내용</p>
+      <div>
+        <p className="text-lg font-semibold truncate">{name}</p>
+        <p className="text-sm text-gray-600 truncate">(주)김동우 컴퍼니</p>
+      </div>
+      <p className="truncate">{content}</p>
     </div>
   );
 }
