@@ -3,11 +3,28 @@ import UserProfile from "../UserProfile";
 import UserNameExplainContent from "./UserNameExplainContent";
 import UserInfoBadge from "./UserInfoBadge";
 // func
-import fetchUserData from "@/util/function/fetch/fetchUserData";
 import getUserDataProps from "@/util/function/getUserDataProps";
+// type
+import { UserData } from "@/types/userdata";
+// constant
+import { APP_URL } from "@/constants/url";
 
 export default async function UserInfo() {
-  const userdata = await fetchUserData();
+  const userdataResponse = await fetch(`${APP_URL}/api/user`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // cache: "force-cache",
+  });
+
+  if (!userdataResponse.ok) {
+    console.log("데이터 확인 실패요");
+    return <p>에러 발생</p>;
+  }
+
+  const userdata: UserData = await userdataResponse.json();
+
   const { nameExplainProps, userInfoBadgeProps } = getUserDataProps(userdata);
 
   return (

@@ -12,7 +12,11 @@ import ErrorContainer from "../ErrorContainer";
 
 export default async function ScrapedStudy() {
   const srapedStudyResponse = await fetch(`${APP_URL}/api/user/scrap/study`, {
-    cache: "force-cache",
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // cache: "force-cache",
   });
   const scrapedStudy: CarouselData[] = await srapedStudyResponse.json();
 
