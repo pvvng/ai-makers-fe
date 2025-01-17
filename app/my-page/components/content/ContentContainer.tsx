@@ -1,6 +1,7 @@
 // component
 import UserInfo from "./UserInfo/UserInfo";
 import Studies from "./Studies/Studies";
+import Scrap from "./Scrap/Scrap";
 // skeleton component
 import SkeletonContent from "../skeleton/SkeletonContent";
 import SkeletonStudies from "../skeleton/SkeletonStudyCard";
@@ -14,11 +15,11 @@ export default function ContentContainer() {
       <Suspense fallback={<SkeletonContent />}>
         <UserInfo />
       </Suspense>
-      <hr />
       <Suspense fallback={<SkeletonStudies />}>
         <Studies />
       </Suspense>
-      <hr />
+      <Scrap type="study" />
+      <Scrap type="contest" />
     </div>
   );
 }

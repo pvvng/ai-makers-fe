@@ -1,5 +1,5 @@
 // components
-import UserProfile from "../../UserProfile";
+import UserProfile from "../UserProfile";
 import UserNameExplainContent from "./UserNameExplainContent";
 import UserInfoBadge from "./UserInfoBadge";
 // func

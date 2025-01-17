@@ -14,7 +14,7 @@ export const userStudy = [
     name: "자바스크립트 딥다이브 스터디",
     explain: "딥다이브 딥하게 배웁니다.",
     activeUser: 8,
-    isMarked: true,
+    isMarked: false,
   },
   {
     dataKey: "study2",
