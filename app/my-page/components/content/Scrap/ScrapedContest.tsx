@@ -12,7 +12,8 @@ import ErrorContainer from "../ErrorContainer";
 
 export default async function ScrapedContest() {
   const srapedContestResponse = await fetch(
-    `${APP_URL}/api/user/scrap/contest`
+    `${APP_URL}/api/user/scrap/contest`,
+    { cache: "force-cache" }
   );
   const scrapedContest: CarouselData[] = await srapedContestResponse.json();
 

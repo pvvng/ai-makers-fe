@@ -11,10 +11,9 @@ export default function ScrapedCard(props: CarouselData) {
       <div className="bg-white h-[160px] border rounded-2xl shadow p-2 flex gap-3 justify-center relative mt-2">
         <ScrapedCardImage />
         <ScrapedCardContent name={props.title} content={props.content} />
-        <FontAwesomeIcon
-          icon={faBookmark}
-          className="text-amber-400 absolute top-4 right-4"
-        />
+        <button className="text-amber-400 absolute top-4 right-4">
+          <FontAwesomeIcon icon={faBookmark} />
+        </button>
       </div>
     </div>
   );

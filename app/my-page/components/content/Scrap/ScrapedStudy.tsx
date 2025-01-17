@@ -11,7 +11,9 @@ import { faBook } from "@fortawesome/free-solid-svg-icons";
 import ErrorContainer from "../ErrorContainer";
 
 export default async function ScrapedStudy() {
-  const srapedStudyResponse = await fetch(`${APP_URL}/api/user/scrap/study`);
+  const srapedStudyResponse = await fetch(`${APP_URL}/api/user/scrap/study`, {
+    cache: "force-cache",
+  });
   const scrapedStudy: CarouselData[] = await srapedStudyResponse.json();
 
   if (!srapedStudyResponse.ok) {
