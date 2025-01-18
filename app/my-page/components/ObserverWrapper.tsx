@@ -1,6 +1,7 @@
 "use client";
-
+// store
 import { useMyPageScrollStore } from "@/store/useMyPageScrollStore";
+// react
 import { ReactNode, useEffect, useRef } from "react";
 
 /** observer를 사용하기 위한 wrapper 컴포넌트 */

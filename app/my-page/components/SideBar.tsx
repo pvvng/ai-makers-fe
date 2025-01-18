@@ -1,5 +1,5 @@
 "use client";
-
+// icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
@@ -9,6 +9,7 @@ import {
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { useMyPageScrollStore } from "@/store/useMyPageScrollStore";
+// classnames
 import classNames from "classnames";
 
 const sideBarItems = [

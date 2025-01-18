@@ -1,9 +1,10 @@
 // icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+// constant
+import { CarouselData } from "@/types/carousel";
 // next
 import Image from "next/image";
-import { CarouselData } from "@/types/carousel";
 
 export default function ScrapedCard(props: CarouselData) {
   return (

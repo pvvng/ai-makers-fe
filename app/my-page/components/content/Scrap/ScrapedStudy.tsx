@@ -2,13 +2,13 @@
 import NullScrapedContainer from "./NullScrapedContainer";
 import ScarpCardMap from "./ScarpCardMap";
 import MyPageComponentHeader from "../MyPageComponentHeader";
+import ErrorContainer from "../ErrorContainer";
 // constant
 import { APP_URL } from "@/constants/url";
 // type
 import { CarouselData } from "@/types/carousel";
 // icon
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
-import ErrorContainer from "../ErrorContainer";
 
 export default async function ScrapedStudy() {
   const srapedStudyResponse = await fetch(`${APP_URL}/api/user/scrap/study`, {

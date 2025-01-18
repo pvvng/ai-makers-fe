@@ -4,14 +4,15 @@ import Studies from "./Studies/Studies";
 import ScrapedStudy from "./Scrap/ScrapedStudy";
 import ScrapedContest from "./Scrap/ScrapedContest";
 import Setting from "./Setting";
+// scroll component
 import ObserverWrapper from "../ObserverWrapper";
+import ScrollWatcher from "../ScrollWatcher";
 // skeleton component
 import SkeletonContent from "../skeleton/SkeletonContent";
 import SkeletonStudies from "../skeleton/SkeletonStudies";
 import SkeletonScrap from "../skeleton/SkeletonScrap";
 // suspense
 import { Suspense } from "react";
-import ScrollWatcher from "../ScrollWatcher";
 
 export default function ContentContainer() {
   return (

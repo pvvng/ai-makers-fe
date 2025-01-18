@@ -1,3 +1,4 @@
+// constant
 import {
   AVAILABLE_DAY_LABEL,
   AVAILABLE_LANGUAGE_LABEL,
