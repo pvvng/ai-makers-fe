@@ -9,6 +9,7 @@ import { Suspense } from "react";
 import ScrapedStudy from "./Scrap/ScrapedStudy";
 import SkeletonScrap from "../skeleton/SkeletonScrap";
 import ScrapedContest from "./Scrap/ScrapedContest";
+import Setting from "./Setting";
 
 export default function ContentContainer() {
   return (
@@ -26,6 +27,7 @@ export default function ContentContainer() {
       <Suspense fallback={<SkeletonScrap label="스크랩한 공모전" />}>
         <ScrapedContest />
       </Suspense>
+      <Setting />
     </div>
   );
 }

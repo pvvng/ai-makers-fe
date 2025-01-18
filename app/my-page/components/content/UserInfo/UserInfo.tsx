@@ -8,6 +8,7 @@ import getUserDataProps from "@/util/function/getUserDataProps";
 import { UserData } from "@/types/userdata";
 // constant
 import { APP_URL } from "@/constants/url";
+import SkeletonContent from "../../skeleton/SkeletonContent";
 
 export default async function UserInfo() {
   const userdataResponse = await fetch(`${APP_URL}/api/user`, {
@@ -19,8 +20,7 @@ export default async function UserInfo() {
   });
 
   if (!userdataResponse.ok) {
-    console.log("데이터 확인 실패요");
-    return <p>에러 발생</p>;
+    return <SkeletonContent />
   }
 
   const userdata: UserData = await userdataResponse.json();
