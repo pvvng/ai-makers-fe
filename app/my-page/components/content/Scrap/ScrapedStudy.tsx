@@ -7,7 +7,7 @@ import { APP_URL } from "@/constants/url";
 // type
 import { CarouselData } from "@/types/carousel";
 // icon
-import { faBook } from "@fortawesome/free-solid-svg-icons";
+import { faBookmark } from "@fortawesome/free-solid-svg-icons";
 import ErrorContainer from "../ErrorContainer";
 
 export default async function ScrapedStudy() {
@@ -26,7 +26,7 @@ export default async function ScrapedStudy() {
 
   return (
     <div className="p-4 px-8">
-      <MyPageComponentHeader icon={faBook} label="스크랩한 스터디" />
+      <MyPageComponentHeader icon={faBookmark} label="스크랩한 스터디" />
       {scrapedStudy.length === 0 ? (
         <NullScrapedContainer koreanType="스터디" josaTypeByType="가" />
       ) : (
