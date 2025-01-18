@@ -20,7 +20,7 @@ export default async function UserInfo() {
   });
 
   if (!userdataResponse.ok) {
-    return <SkeletonContent />
+    return <SkeletonContent />;
   }
 
   const userdata: UserData = await userdataResponse.json();
@@ -28,20 +28,12 @@ export default async function UserInfo() {
   const { nameExplainProps, userInfoBadgeProps } = getUserDataProps(userdata);
 
   return (
-    <UserInfoWrapper>
+    <div className="p-4 px-8 flex gap-10">
       <UserProfile profile={userdata.profile} />
       <div className="w-3/4">
         <UserNameExplainContent {...nameExplainProps} />
         <UserInfoBadge {...userInfoBadgeProps} />
       </div>
-    </UserInfoWrapper>
+    </div>
   );
-}
-
-function UserInfoWrapper({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return <div className="p-4 px-8 flex gap-10">{children}</div>;
 }
