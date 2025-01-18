@@ -18,7 +18,7 @@ export default async function ScrapedContest() {
       headers: {
         "Content-Type": "application/json",
       },
-      // cache: "force-cache",
+      cache: "force-cache",
     }
   );
   const scrapedContest: CarouselData[] = await srapedContestResponse.json();

@@ -16,7 +16,7 @@ export default async function UserInfo() {
     headers: {
       "Content-Type": "application/json",
     },
-    // cache: "force-cache",
+    cache: "force-cache",
   });
 
   if (!userdataResponse.ok) {

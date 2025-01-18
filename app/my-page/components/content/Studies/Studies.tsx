@@ -15,7 +15,7 @@ export default async function Studies() {
     headers: {
       "Content-Type": "application/json",
     },
-    // cache: "force-cache",
+    cache: "force-cache",
   });
 
   const userStudies: UserStudies = await userStudiesResponse.json();

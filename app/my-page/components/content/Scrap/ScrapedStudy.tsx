@@ -16,7 +16,7 @@ export default async function ScrapedStudy() {
     headers: {
       "Content-Type": "application/json",
     },
-    // cache: "force-cache",
+    cache: "force-cache",
   });
   const scrapedStudy: CarouselData[] = await srapedStudyResponse.json();
 
