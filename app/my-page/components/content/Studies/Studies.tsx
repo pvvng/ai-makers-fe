@@ -1,5 +1,4 @@
 // coponent
-import fetchUserStudy from "@/util/function/fetch/fetchUserStudy";
 import StudyCard from "./StudyCard/StudyCard";
 import ErrorContainer from "../ErrorContainer";
 import MyPageComponentHeader from "../MyPageComponentHeader";
@@ -7,11 +6,21 @@ import MyPageComponentHeader from "../MyPageComponentHeader";
 import { UserStudies, UserStudy } from "@/types/userStudy";
 // icon
 import { faBook } from "@fortawesome/free-solid-svg-icons";
+// constant
+import { APP_URL } from "@/constants/url";
 
 export default async function Studies() {
-  const userStudies: UserStudies | undefined = await fetchUserStudy();
+  const userStudiesResponse = await fetch(`${APP_URL}/api/user/study`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    // cache: "force-cache",
+  });
 
-  if (!userStudies) {
+  const userStudies: UserStudies = await userStudiesResponse.json();
+
+  if (!userStudiesResponse.ok) {
     return <ErrorContainer label="내 스터디" />;
   }
 

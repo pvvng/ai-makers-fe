@@ -8,8 +8,6 @@ export default function ScarpCardMap({
 }: {
   scrapedData: CarouselData[];
 }) {
-  console.log(scrapedData);
-
   return (
     <div className="flex flex-wrap justify-start items-start">
       {scrapedData.map((data) => (
