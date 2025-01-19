@@ -4,14 +4,18 @@ import {
   AVAILABLE_LANGUAGE_LABEL,
   AVAILABLE_LOCATION_LABEL,
 } from "@/constants/validation/selectValueLabel";
+import BackgroundBox from "../content/BackgroundBox";
 
 export default function SkeletonContent() {
   return (
-    <section className="p-4 px-8 flex gap-10">
-      <SkeltonUserImage />
-      <div className="w-3/4">
-        <SkeletonUserNameExplainInfo />
-        <SkeletonUserInfoBadge />
+    <section>
+      <BackgroundBox />
+      <div className="p-4 px-8 flex gap-10">
+        <SkeltonUserImage />
+        <div className="w-3/4">
+          <SkeletonUserNameExplainInfo />
+          <SkeletonUserInfoBadge />
+        </div>
       </div>
     </section>
   );
