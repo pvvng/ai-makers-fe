@@ -1,13 +1,13 @@
+// functions
+import { validateFormValues } from "../function/validation/form/validateFormValues";
+import fetchJoinUs from "../function/fetch/fetchJoinUs";
+import getForm from "../function/validation/form/validateForm";
 // store
 import useLocationStore from "@/store/useLocationStore";
 import { useSelectorStore } from "@/store/useSelectorStore";
 // types
 import { FormElment, FormFieldName, FormValues } from "@/types/form";
 import { FormEvent } from "react";
-// functions
-import { validateFormValues } from "../function/validation/form/validateFormValues";
-import fetchJoinUs from "../function/fetch/fetchJoinUs";
-import getForm from "../function/validation/form/validateForm";
 
 export default function useJoinFormHandler() {
   const storeValue = useGetStoreValue();
