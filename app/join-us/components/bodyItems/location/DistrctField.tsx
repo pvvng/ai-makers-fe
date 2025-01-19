@@ -9,14 +9,12 @@ export default function DistrctField() {
   const { selectedCity, selectedArea } = useLocationStore();
 
   return (
-    <div className="w-1/2 px-1">
-      <div className="border p-2 h-[250px] overflow-scroll shadow">
-        {selectedCity && selectedArea && (
-          <DistrictMapBox
-            districtData={getDistricts(selectedArea, selectedCity)}
-          />
-        )}
-      </div>
+    <div className="w-1/2 px-1 border p-2 h-[250px] overflow-scroll shadow">
+      {selectedCity && selectedArea && (
+        <DistrictMapBox
+          districtData={getDistricts(selectedArea, selectedCity)}
+        />
+      )}
     </div>
   );
 }
