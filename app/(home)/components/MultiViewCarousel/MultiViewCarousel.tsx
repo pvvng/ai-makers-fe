@@ -18,7 +18,7 @@ export default function MultiViewCarousel() {
   };
 
   return (
-    <div className="w-full p-4 pt-5 pb-5 px-8">
+    <section className="w-full p-4 pt-5 pb-5 px-8">
       <div className="flex gap-2 justify-center items-center">
         <div className="w-2/12">
           <ListItemContainer
@@ -30,6 +30,6 @@ export default function MultiViewCarousel() {
           <Carousel {...bannerDataProps} />
         </div>
       </div>
-    </div>
+    </section>
   );
 }

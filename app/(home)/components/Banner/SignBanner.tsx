@@ -17,14 +17,14 @@ export default function SignBanner({
     type === "loggedIn" ? afterSignImagePropsData : beforeSignImagePropsData;
 
   return (
-    <div className="w-full p-4 pt-10 pb-5 px-8">
+    <section className="w-full p-4 pt-10 pb-5 px-8">
       <div className="flex justify-center items-center gap-2 h-[120px]">
         <AdvertiseImage />
         {imagePropsData.map((imageData) => (
           <LinkImage key={imageData.image} {...imageData} />
         ))}
       </div>
-    </div>
+    </section>
   );
 }
 
