@@ -1,13 +1,14 @@
 "use client";
-// store
-import { useBannerCarouselStore } from "@/store/useBannerCarouselStore";
+// context api
+import { useCarouselContext } from "../../../../../util/hooks/CarouselContext";
 // components
 import CarouselMoveButton from "./CarouselMoveButton";
+// type
 import { ButtonData } from "@/types/carousel";
 
 export default function CarouselButtonsContainer() {
   const { translateState, handleLeftClick, handleRightClick } =
-    useBannerCarouselStore();
+    useCarouselContext();
 
   const moveButtonData : ButtonData = [
     { type: "left", handler: handleLeftClick },

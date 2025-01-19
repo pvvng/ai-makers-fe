@@ -1,17 +1,11 @@
 "use client";
-// store
-import { useBannerCarouselStore } from "@/store/useBannerCarouselStore";
 // components
 import CarouselCard from "./CarouselCard";
-// mock-up
-import { CarouselData } from "@/types/carousel";
+// context api
+import { useCarouselContext } from "../../../../../util/hooks/CarouselContext";
 
-export default function CarouselCardContainer({
-  bannerData,
-}: {
-  bannerData: CarouselData[];
-}) {
-  const { translateState } = useBannerCarouselStore();
+export default function CarouselCardContainer() {
+  const { bannerData, translateState } = useCarouselContext();
 
   return (
     <div
