@@ -4,7 +4,7 @@ import LinkImage from "./LinkImage";
 import {
   afterSignImagePropsData,
   beforeSignImagePropsData,
-} from "@/constants/mainBanner";
+} from "@/constants/main/mainBanner";
 // next
 import Image from "next/image";
 

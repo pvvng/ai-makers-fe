@@ -5,10 +5,10 @@ import NavSearchInput from "./NavSearch";
 import NavLinks from "./Links";
 // react
 import { usePathname } from "next/navigation";
-// constants
-import { hiddenNavbarPath } from "@/constants/hiddenNavbarPath";
 // classname bind
 import classNames from "classnames";
+
+const hiddenNavbarPath = ["/login", "/join-us"];
 
 export default function Navbar() {
   const path = usePathname();

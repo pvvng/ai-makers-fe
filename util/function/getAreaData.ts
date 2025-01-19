@@ -1,4 +1,4 @@
-import { area } from "@/constants/area";
+import { area } from "@/constants/joinUs/area";
 
 export const areaKeys = Object.keys(area);
 

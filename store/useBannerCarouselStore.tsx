@@ -3,7 +3,7 @@ import { create } from "zustand";
 import {
   MAX_CAROUSEL_NUMBER,
   MIN_CAROUSEL_NUMBER,
-} from "@/constants/bannerCarousel";
+} from "@/constants/main/bannerCarousel";
 
 interface BannerCarouselState {
   translateState: number;

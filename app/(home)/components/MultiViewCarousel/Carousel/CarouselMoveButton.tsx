@@ -3,7 +3,7 @@
 import {
   MAX_CAROUSEL_NUMBER,
   MIN_CAROUSEL_NUMBER,
-} from "@/constants/bannerCarousel";
+} from "@/constants/main/bannerCarousel";
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
