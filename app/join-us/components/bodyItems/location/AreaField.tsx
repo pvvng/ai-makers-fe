@@ -9,8 +9,8 @@ export default function AreaField() {
   const { areaHandler } = useLocationStore();
 
   return (
-    <div className="md:w-3/12 w-1/2 px-1">
-      <div className="border p-2 h-[200px] overflow-scroll shadow">
+    <div className="w-1/4 px-1">
+      <div className="border p-2 h-[250px] overflow-scroll shadow">
         {areaKeys.map((area) => (
           <LoactionButton
             key={area}
