@@ -1,12 +1,12 @@
-export default function UserNameExplainContent({
-  name,
-  userKey,
-  explain,
-}: {
+interface PropsType {
   name: string;
   userKey: string;
   explain: string;
-}) {
+}
+
+export default function UserNameExplainContent(props: PropsType) {
+  const { name, userKey, explain } = props;
+  
   return (
     <div className="mt-4">
       <p className="text-3xl font-extrabold">

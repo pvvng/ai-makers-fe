@@ -14,7 +14,7 @@ export default function PasswordInput({
 }) {
   return (
     <input
-      className="border h-12 p-2 w-8/12 shadow"
+      className="border h-12 p-2 w-5/6 shadow"
       placeholder="비밀번호"
       type={passwordType}
       required

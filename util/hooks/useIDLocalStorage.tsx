@@ -1,5 +1,4 @@
 import { REMEMBER_ID } from "@/constants/signInCheckBox";
-import { INVALID_STRING } from "@/constants/validation/invalidString";
 
 export default function useIDLocalStorage() {
   function rememberId(id: string, checked: boolean) {
@@ -11,7 +10,7 @@ export default function useIDLocalStorage() {
   }
 
   function getRememberedId(): string {
-    return localStorage.getItem(REMEMBER_ID) || INVALID_STRING;
+    return localStorage.getItem(REMEMBER_ID) || "";
   }
 
   return { rememberId, getRememberedId };

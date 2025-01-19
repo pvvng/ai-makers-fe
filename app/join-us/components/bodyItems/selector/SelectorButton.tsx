@@ -1,6 +1,7 @@
 "use client";
 
 import { useSelectorStore } from "@/store/useSelectorStore";
+import classNames from "classnames";
 
 export default function SelectorButton({
   text,
@@ -10,25 +11,27 @@ export default function SelectorButton({
   type: "language" | "day";
 }) {
   const { selectedData, addItem, removeItem } = useSelectorStore();
-  
+
   const isActive = selectedData[type].includes(text);
 
   const handleClick = () => {
-    if (isActive) {
-      removeItem(type, text);
+    isActive ? removeItem(type, text) : addItem(type, text);
+  };
 
-      return;
-    }
-
-    addItem(type, text);
+  const getSelectorButtonClassname = () => {
+    return classNames(
+      "w-full h-12 border flex items-center justify-center transition",
+      {
+        "bg-blue-500 text-white": isActive,
+        "bg-white text-black": !isActive,
+      }
+    );
   };
 
   return (
     <button
       type="button"
-      className={`w-full h-12 border flex items-center justify-center transition ${
-        isActive ? "bg-blue-500 text-white" : "bg-white text-black"
-      }`}
+      className={getSelectorButtonClassname()}
       onClick={handleClick}
     >
       {text}

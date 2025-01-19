@@ -1,9 +1,10 @@
 // icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBookmark } from "@fortawesome/free-solid-svg-icons";
+// constant
+import { CarouselData } from "@/types/carousel";
 // next
 import Image from "next/image";
-import { CarouselData } from "@/types/carousel";
 
 export default function ScrapedCard(props: CarouselData) {
   return (
@@ -11,9 +12,7 @@ export default function ScrapedCard(props: CarouselData) {
       <div className="bg-white h-[160px] border rounded-2xl shadow p-2 flex gap-3 justify-center relative mt-2">
         <ScrapedCardImage />
         <ScrapedCardContent name={props.title} content={props.content} />
-        <button className="text-amber-400 absolute top-4 right-4">
-          <FontAwesomeIcon icon={faBookmark} />
-        </button>
+        <BookMarkButton />
       </div>
     </div>
   );
@@ -49,5 +48,13 @@ function ScrapedCardContent({
       </div>
       <p className="truncate">{content}</p>
     </div>
+  );
+}
+
+function BookMarkButton() {
+  return (
+    <button className="text-amber-400 absolute top-4 right-4">
+      <FontAwesomeIcon icon={faBookmark} />
+    </button>
   );
 }

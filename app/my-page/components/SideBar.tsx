@@ -1,5 +1,5 @@
 "use client";
-
+// icon
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBook,
@@ -9,6 +9,7 @@ import {
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { useMyPageScrollStore } from "@/store/useMyPageScrollStore";
+// classnames
 import classNames from "classnames";
 
 const sideBarItems = [
@@ -22,11 +23,11 @@ const sideBarItems = [
 
 export default function SideBar() {
   return (
-    <div className="w-1/6 sticky top-14">
+    <section className="w-1/6 sticky top-14">
       <ul className="w-full flex flex-col gap-4 justify-center items-center cursor-pointer">
         <SideBarItemsMap />
       </ul>
-    </div>
+    </section>
   );
 }
 

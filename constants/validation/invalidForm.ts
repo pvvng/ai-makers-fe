@@ -1,1 +1,0 @@
-export const INVALID_FORM_MESSAGE = "제출 양식이 확인되지 않습니다. 다시 시도해주세요.";

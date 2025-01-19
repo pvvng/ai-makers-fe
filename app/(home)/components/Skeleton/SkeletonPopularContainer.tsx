@@ -3,12 +3,16 @@ export default function SkeletonPopularContainer() {
     <div className="w-1/4 p-4 min-h-[450px] bg-white border rounded-2xl shadow flex items-center">
       <div className="w-full">
         <div className="animate-pulse bg-gray-200 shadow h-[28px] w-1/2" />
-        {Array.from({ length: 8 }).map((_, i) => (
-          <SkeletonPopularCard key={i} />
-        ))}
+        <PopularCardMap />
       </div>
     </div>
   );
+}
+
+function PopularCardMap() {
+  return Array.from({ length: 8 }).map((_, i) => (
+    <SkeletonPopularCard key={i} />
+  ));
 }
 
 function SkeletonPopularCard() {

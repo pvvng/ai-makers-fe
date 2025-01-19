@@ -1,6 +1,6 @@
 "use client";
 // component
-import MyPageComponentHeader from "./MyPageComponentHeader";
+import MyPageComponentHeader from "../ComponentHeader";
 // icon
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 

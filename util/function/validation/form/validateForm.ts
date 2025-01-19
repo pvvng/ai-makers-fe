@@ -1,5 +1,6 @@
-import { INVALID_FORM_MESSAGE } from "@/constants/validation/invalidForm";
 import { FormEvent } from "react";
+
+const INVALID_FORM_MESSAGE = "제출 양식이 확인되지 않습니다. 다시 시도해주세요.";
 
 export default function getForm(e: FormEvent<HTMLButtonElement>) {
   const form = (e.target as HTMLButtonElement).form;

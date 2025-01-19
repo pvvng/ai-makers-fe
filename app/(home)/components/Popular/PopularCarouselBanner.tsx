@@ -1,6 +1,6 @@
 "use client";
 
-import { ANIMATION_TIME } from "@/constants/popularCarousel";
+import { ANIMATION_TIME } from "@/constants/main/popularCarousel";
 import { ImageData } from "@/types/popularCarousel";
 import usePopularCarouselBanner from "@/util/hooks/usePopularCarouselBanner";
 import Image from "next/image";

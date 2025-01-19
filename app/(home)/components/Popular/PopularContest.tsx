@@ -10,22 +10,18 @@ import { APP_URL } from "@/constants/url";
 
 export default async function PopularContest() {
   const popularContestResponse = await fetch(
-    `${APP_URL}/api/popular-competitions`,
+    `${APP_URL}/api/popular/competitions`,
     {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
       cache: "force-cache",
     }
   );
 
+  const popularContestData: CarouselData[] =
+    await popularContestResponse.json();
+
   if (!popularContestResponse.ok) {
     return <PopularErrorContainer name="공모전" />;
   }
-
-  const popularContestData: CarouselData[] =
-    await popularContestResponse.json();
 
   return (
     <PopularDataMap

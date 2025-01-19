@@ -1,5 +1,5 @@
 // component
-import MyPageComponentHeader from "./MyPageComponentHeader";
+import MyPageComponentHeader from "./ComponentHeader";
 // icon type
 import { faCircleExclamation } from "@fortawesome/free-solid-svg-icons";
 

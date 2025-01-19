@@ -2,16 +2,12 @@ import { BadgeType } from "@/types/carousel";
 import classNames from "classnames";
 
 export default function BannerCardBadge({ type }: { type: BadgeType }) {
-  return (
-    <span
-      className={classNames(
-        getBadgeClassnames(type) +
-          "border p-1 px-2 rounded-full absolute top-4 right-4 text-sm font-bold"
-      )}
-    >
-      {getBadgeText(type)}
-    </span>
+  const badgeClassnames = classNames(
+    getBadgeClassnames(type) +
+      "border p-1 px-2 rounded-full absolute top-4 right-4 text-sm font-bold"
   );
+  
+  return <span className={badgeClassnames}>{getBadgeText(type)}</span>;
 }
 
 function getBadgeClassnames(type: BadgeType) {

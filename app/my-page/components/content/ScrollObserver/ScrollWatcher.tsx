@@ -1,6 +1,7 @@
 "use client";
-
+// store
 import { useMyPageScrollStore } from "@/store/useMyPageScrollStore";
+// react
 import { useEffect } from "react";
 
 /** scroll 기능시 좀 더 제대로 된 위치에서 ref 관측하기 위해서 사용하는 컴포넌트 */
