@@ -5,15 +5,15 @@ import {
   AVAILABLE_LOCATION_LABEL,
 } from "@/constants/validation/selectValueLabel";
 
-export default function UserInfoBadge({
-  language,
-  location,
-  day,
-}: {
+interface PropsType {
   language: string[];
   location: string[];
   day: string[];
-}) {
+}
+
+export default function UserInfoBadge(props: PropsType) {
+  const { language, location, day } = props;
+  
   const badgeDataArray = [
     { label: AVAILABLE_LANGUAGE_LABEL, data: language },
     { label: AVAILABLE_LOCATION_LABEL, data: location },

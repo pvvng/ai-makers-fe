@@ -7,13 +7,13 @@ import {
 
 export default function SkeletonContent() {
   return (
-    <div className="p-4 px-8 flex gap-10">
+    <section className="p-4 px-8 flex gap-10">
       <SkeltonUserImage />
       <div className="w-3/4">
         <SkeletonUserNameExplainInfo />
         <SkeletonUserInfoBadge />
       </div>
-    </div>
+    </section>
   );
 }
 

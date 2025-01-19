@@ -1,7 +1,7 @@
 // component
 import NullScrapedContainer from "./NullScrapedContainer";
 import ScarpCardMap from "./ScarpCardMap";
-import MyPageComponentHeader from "../MyPageComponentHeader";
+import MyPageComponentHeader from "../ComponentHeader";
 import ErrorContainer from "../ErrorContainer";
 // constant
 import { APP_URL } from "@/constants/url";
@@ -14,10 +14,6 @@ export default async function ScrapedContest() {
   const srapedContestResponse = await fetch(
     `${APP_URL}/api/user/scrap/contest`,
     {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
       cache: "force-cache",
     }
   );
@@ -28,13 +24,13 @@ export default async function ScrapedContest() {
   }
 
   return (
-    <div className="p-4 px-8">
+    <section className="p-4 px-8">
       <MyPageComponentHeader icon={faBookmark} label="스크랩한 공모전" />
       {scrapedContest.length === 0 ? (
         <NullScrapedContainer koreanType="공모전" josaTypeByType="이" />
       ) : (
         <ScarpCardMap scrapedData={scrapedContest} />
       )}
-    </div>
+    </section>
   );
 }
