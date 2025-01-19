@@ -1,5 +1,9 @@
 // type, contants
-import { PasswordType, UNVISIBLE_STATE, VISIBLE_STATE } from "./PasswordInputBox";
+import {
+  PasswordType,
+  UNVISIBLE_STATE,
+  VISIBLE_STATE,
+} from "./PasswordInputBox";
 
 export default function PasswordVisibilityToggle({
   setPasswordType,
@@ -9,16 +13,13 @@ export default function PasswordVisibilityToggle({
   const checkBoxHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const checkBox = e.currentTarget;
 
-    if (checkBox.checked) {
-      setPasswordType(VISIBLE_STATE);
-      return;
-    }
-
-    setPasswordType(UNVISIBLE_STATE);
+    checkBox.checked
+      ? setPasswordType(VISIBLE_STATE)
+      : setPasswordType(UNVISIBLE_STATE);
   };
 
   return (
-    <div className="w-4/12 text-center">
+    <div className="w-1/6 text-center">
       <input
         id="check-button"
         className="mx-2"
