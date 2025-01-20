@@ -1,25 +1,23 @@
 "use client";
-// store
+// component
 import LoactionButton from "./LoactionButton";
-import useLocationStore from "@/store/useLocationStore";
-// data get function
+// constant
 import { areaKeys } from "@/util/function/getAreaData";
 
 export default function AreaField() {
-  const { areaHandler } = useLocationStore();
-
   return (
-    <div className="md:w-3/12 w-1/2 px-1">
-      <div className="border p-2 h-[200px] overflow-scroll shadow">
-        {areaKeys.map((area) => (
-          <LoactionButton
-            key={area}
-            value={area}
-            type="area"
-            clickHandler={areaHandler}
-          />
-        ))}
-      </div>
+    <div className="w-1/4 px-1 border p-2 h-[250px] overflow-scroll shadow">
+      <AreaKeysMap />
     </div>
   );
+}
+
+function AreaKeysMap() {
+  return areaKeys.map((area) => (
+    <LoactionButton
+      key={area}
+      value={area}
+      type="area"
+    />
+  ));
 }

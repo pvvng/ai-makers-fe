@@ -3,6 +3,8 @@ import CarouselCardContainer from "./CarouselCardContainer";
 import CarouselButtonsContainer from "./CarouselButtonsContainer";
 import SkeletonCardContainer from "../../Skeleton/SkeletonCardContainer";
 import SkeletonErrorContainer from "../../Skeleton/SkeletonErrorContainer";
+// context api
+import { CarouselProvider } from "@/util/hooks/contextAPI/CarouselContext";
 // type
 import { CarouselData } from "@/types/carousel";
 
@@ -20,11 +22,11 @@ export default function Carousel(props: PropsType) {
   if (isLoading || !bannerData) return <SkeletonCardContainer />;
 
   return (
-    <>
-      <div className="w-full overflow-hidden pt-1 pb-1">
-        <CarouselCardContainer bannerData={bannerData} />
-      </div>
-      <CarouselButtonsContainer />
-    </>
+    <div className="w-full overflow-hidden pt-1 pb-1">
+      <CarouselProvider bannerData={bannerData}>
+        <CarouselCardContainer />
+        <CarouselButtonsContainer />
+      </CarouselProvider>
+    </div>
   );
 }

@@ -1,12 +1,12 @@
 // components
 import PopularDataMap from "./PopularDataMap";
+import PopularErrorContainer from "./PopularErrorContainer";
 // icon
 import { faBook } from "@fortawesome/free-solid-svg-icons";
 // type
 import { CarouselData } from "@/types/carousel";
 // constant
 import { APP_URL } from "@/constants/url";
-import PopularErrorContainer from "./PopularErrorContainer";
 
 export default async function PopularStudy() {
   const popularContestResponse = await fetch(`${APP_URL}/api/popular/studies`, {

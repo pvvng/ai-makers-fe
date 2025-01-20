@@ -1,6 +1,7 @@
+// components
+
 // type
 import { Metadata } from "next";
-// components
 import SignBanner from "./components/Banner/SignBanner";
 import MultiViewCarousel from "./components/MultiViewCarousel/MultiViewCarousel";
 import PopularContainer from "./components/Popular/PopularContainer";
