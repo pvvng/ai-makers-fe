@@ -4,7 +4,7 @@ import CarouselButtonsContainer from "./CarouselButtonsContainer";
 import SkeletonCardContainer from "../../Skeleton/SkeletonCardContainer";
 import SkeletonErrorContainer from "../../Skeleton/SkeletonErrorContainer";
 // context api
-import { CarouselProvider } from "@/util/hooks/CarouselContext";
+import { CarouselProvider } from "@/util/hooks/contextAPI/CarouselContext";
 // type
 import { CarouselData } from "@/types/carousel";
 
