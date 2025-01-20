@@ -1,6 +1,6 @@
 "use client";
 // context api
-import { useCarouselContext } from "../../../../../util/hooks/contextAPI/CarouselContext";
+import { useCarouselContext } from "@/util/hooks/contextAPI/CarouselContext";
 // components
 import CarouselMoveButton from "./CarouselMoveButton";
 // type

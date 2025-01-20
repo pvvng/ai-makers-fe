@@ -2,7 +2,7 @@
 // components
 import CarouselCard from "./CarouselCard";
 // context api
-import { useCarouselContext } from "../../../../../util/hooks/contextAPI/CarouselContext";
+import { useCarouselContext } from "@/util/hooks/contextAPI/CarouselContext";
 
 export default function CarouselCardContainer() {
   const { bannerData, translateState } = useCarouselContext();
