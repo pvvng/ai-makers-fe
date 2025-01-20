@@ -8,36 +8,17 @@ interface LocationState {
   selectedDistricts: string[];
   selectedArea: string | null;
   selectedCity: string | null;
-  handleDistrictSelect: (district: string) => void;
   clearDistrictSelect: () => void;
   areaHandler: (key: string) => void;
   citiesHandler: (city: string) => void;
-  selectButtonColor: (value: string, type: SelectType) => string;
+  districtHandler: (district: string) => void;
+  getSelectedButtonColor: (value: string, type: SelectType) => boolean;
 }
 
 const useLocationStore = create<LocationState>((set, get) => ({
   selectedDistricts: [],
   selectedArea: null,
   selectedCity: null,
-
-  handleDistrictSelect: (district) =>
-    set((state) => {
-      if (state.selectedDistricts.includes(district)) {
-        return {
-          selectedDistricts: state.selectedDistricts.filter(
-            (d) => d !== district
-          ),
-        };
-      }
-
-      if (state.selectedDistricts.length < MAX_LOCATION_SELECT_COUNT) {
-        return {
-          selectedDistricts: [...state.selectedDistricts, district],
-        };
-      }
-
-      return {};
-    }),
 
   clearDistrictSelect: () =>
     set(() => ({
@@ -57,22 +38,41 @@ const useLocationStore = create<LocationState>((set, get) => ({
       selectedDistricts: [],
     })),
 
-  selectButtonColor: (value, type) => {
+  districtHandler: (district) =>
+    set((state) => {
+      if (state.selectedDistricts.includes(district)) {
+        return {
+          selectedDistricts: state.selectedDistricts.filter(
+            (d) => d !== district
+          ),
+        };
+      }
+
+      if (state.selectedDistricts.length < MAX_LOCATION_SELECT_COUNT) {
+        return {
+          selectedDistricts: [...state.selectedDistricts, district],
+        };
+      }
+
+      return {};
+    }),
+    
+  getSelectedButtonColor: (value, type) => {
     const { selectedCity, selectedArea, selectedDistricts } = get();
 
     if (type === "city") {
-      return selectedCity === value ? "bg-blue-500 text-white" : "";
+      return selectedCity === value;
     }
 
     if (type === "area") {
-      return selectedArea === value ? "bg-blue-500 text-white" : "";
+      return selectedArea === value;
     }
 
     if (type === "district") {
-      return selectedDistricts.includes(value) ? "bg-blue-500 text-white" : "";
+      return selectedDistricts.includes(value);
     }
 
-    return "";
+    return false;
   },
 }));
 
