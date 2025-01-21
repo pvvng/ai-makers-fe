@@ -1,9 +1,11 @@
+// components
+import SelectOption from "./SelectOption";
+// constant
 import {
   contestOptions,
   interestOptions,
   purposeOptions,
-} from "@/constants/options";
-import { Options } from "@/types/options";
+} from "@/constants/joinUs/options";
 
 export default function PurposeInterestContestSelectBox() {
   const selectData = [
@@ -30,33 +32,5 @@ export default function PurposeInterestContestSelectBox() {
         <SelectOption key={data.name} {...data} />
       ))}
     </div>
-  );
-}
-
-function SelectOption({
-  name,
-  label,
-  options,
-}: {
-  name: string;
-  label: string;
-  options: Options;
-}) {
-  return (
-    <select
-      className="border h-12 p-2 w-1/3 shadow"
-      required
-      defaultValue=""
-      name={name}
-    >
-      <option value="" disabled>
-        {label}
-      </option>
-      {options.map((option) => (
-        <option key={option.value} value={option.value}>
-          {option.label}
-        </option>
-      ))}
-    </select>
   );
 }

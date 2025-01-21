@@ -8,7 +8,7 @@ import { Suspense } from "react";
 
 export default function PopularContainer() {
   return (
-    <div className="w-full p-4 pt-10 pb-10 px-8 bg-gray-100">
+    <section className="w-full p-4 pt-10 pb-10 px-8 bg-gray-100">
       <div className="flex gap-2 justify-center items-center">
         <PopularCarouselBanner />
         <Suspense fallback={<SkeletonPopularContainer />}>
@@ -18,6 +18,6 @@ export default function PopularContainer() {
           <PopularStudy />
         </Suspense>
       </div>
-    </div>
+    </section>
   );
 }

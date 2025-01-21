@@ -1,10 +1,12 @@
-// type
-import { CarouselData } from "@/types/carousel";
 // components
 import CarouselCardContainer from "./CarouselCardContainer";
 import CarouselButtonsContainer from "./CarouselButtonsContainer";
 import SkeletonCardContainer from "../../Skeleton/SkeletonCardContainer";
 import SkeletonErrorContainer from "../../Skeleton/SkeletonErrorContainer";
+// context api
+import { CarouselProvider } from "@/util/hooks/contextAPI/CarouselContext";
+// type
+import { CarouselData } from "@/types/carousel";
 
 interface PropsType {
   bannerData: CarouselData[] | undefined;
@@ -12,35 +14,19 @@ interface PropsType {
   isError: boolean;
 }
 
-export default function Carousel({
-  bannerDataObject,
-}: {
-  bannerDataObject: PropsType;
-}) {
-  return (
-    <div className="w-10/12 relative">
-      <RenderBannerContainer bannerDataObject={bannerDataObject} />
-    </div>
-  );
-}
-
-function RenderBannerContainer({
-  bannerDataObject,
-}: {
-  bannerDataObject: PropsType;
-}) {
-  const { bannerData, isLoading, isError } = bannerDataObject;
+export default function Carousel(props: PropsType) {
+  const { bannerData, isLoading, isError } = props;
 
   if (isError) return <SkeletonErrorContainer />;
 
   if (isLoading || !bannerData) return <SkeletonCardContainer />;
 
   return (
-    <>
-      <div className="w-full overflow-hidden pt-1 pb-1">
-        <CarouselCardContainer bannerData={bannerData} />
-      </div>
-      <CarouselButtonsContainer />
-    </>
+    <div className="w-full overflow-hidden pt-1 pb-1">
+      <CarouselProvider bannerData={bannerData}>
+        <CarouselCardContainer />
+        <CarouselButtonsContainer />
+      </CarouselProvider>
+    </div>
   );
 }

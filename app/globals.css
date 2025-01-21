@@ -21,7 +21,7 @@ body {
 }
 
 .blue-gradient-tl {
-  @apply rounded bg-gradient-to-tl from-blue-300 to-blue-700;
+  @apply bg-gradient-to-tl from-blue-300 to-blue-700;
 }
 
 .hover\:blue-gradient-tl:hover {

@@ -1,26 +1,27 @@
 "use client";
-// store
+// component
 import LoactionButton from "./LoactionButton";
+// store
 import useLocationStore from "@/store/useLocationStore";
-// data get function
-import { getCities } from "@/util/function/location/getAreaData";
+// function
+import { getCities } from "@/util/function/getAreaData";
 
 export default function CitiesField() {
-  const { selectedArea, citiesHandler } = useLocationStore();
-
   return (
-    <div className="md:w-3/12 w-1/2 px-1">
-      <div className="border p-2 h-[200px] overflow-scroll shadow">
-        {selectedArea &&
-          getCities(selectedArea).map((city) => (
-            <LoactionButton
-              key={city}
-              value={city}
-              type="city"
-              clickHandler={citiesHandler}
-            />
-          ))}
-      </div>
+    <div className="w-1/4 px-1 border p-2 h-[250px] overflow-scroll shadow">
+      <SelectedAreaMap />
     </div>
   );
+}
+
+function SelectedAreaMap() {
+  const { selectedArea } = useLocationStore();
+
+  if (selectedArea) {
+    return getCities(selectedArea).map((city) => (
+      <LoactionButton key={city} value={city} type="city" />
+    ));
+  }
+
+  return null;
 }

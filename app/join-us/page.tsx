@@ -1,6 +1,8 @@
-import { Metadata } from "next";
+// component
 import JoinUsBody from "./components/Body";
 import JoinUsHeader from "./components/Header";
+// type
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "회원가입",

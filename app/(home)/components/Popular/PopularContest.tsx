@@ -1,11 +1,27 @@
-// fetch func
-import fetchPopularContestData from "@/util/function/fetch/fetchPopularContestData";
 // components
 import PopularDataMap from "./PopularDataMap";
+import PopularErrorContainer from "./PopularErrorContainer";
+// icon
 import { faAward } from "@fortawesome/free-solid-svg-icons";
+// type
+import { CarouselData } from "@/types/carousel";
+// constant
+import { APP_URL } from "@/constants/url";
 
 export default async function PopularContest() {
-  const popularContestData = await fetchPopularContestData();
+  const popularContestResponse = await fetch(
+    `${APP_URL}/api/popular/competitions`,
+    {
+      cache: "force-cache",
+    }
+  );
+
+  const popularContestData: CarouselData[] =
+    await popularContestResponse.json();
+
+  if (!popularContestResponse.ok) {
+    return <PopularErrorContainer name="공모전" />;
+  }
 
   return (
     <PopularDataMap

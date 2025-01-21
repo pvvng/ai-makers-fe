@@ -1,33 +1,24 @@
-// validation
+// validation func
 import {
   validateIdHasSpace,
   validateIdLength,
   validateIdRegex,
-} from "@/util/function/validation/id";
-// components
-import ValidationFieldBox from "./ValidationFieldBox";
-// error messages
-import {
-  ID_LENGTH_ERROR_MESSAGE,
-  ID_RULE_ERROR_MESSAGE,
-  ID_SPACE_ERROR_MESSAGE,
-} from "@/constants/validation/errorMessage";
+} from "@/util/function/validation/joinUs/id";
+// component
+import ValidationResultCard from "./ValidationResultCard";
+// type
+import { ValidationResultType } from "@/types/joinUs";
 
 export default function IdValidateField({ id }: { id: string }) {
-  const validationResults = [
-    {
-      isValid: validateIdLength(id),
-      message: ID_LENGTH_ERROR_MESSAGE,
-    },
-    {
-      isValid: validateIdRegex(id),
-      message: ID_RULE_ERROR_MESSAGE,
-    },
-    {
-      isValid: validateIdHasSpace(id),
-      message: ID_SPACE_ERROR_MESSAGE,
-    },
+  const validationResults: ValidationResultType = [
+    validateIdHasSpace(id),
+    validateIdLength(id),
+    validateIdRegex(id),
   ];
 
-  return <ValidationFieldBox validationResults={validationResults} />;
+  return (
+    <div className="w-full bg-white border mt-2 p-3 shadow">
+      <ValidationResultCard validationResults={validationResults} />
+    </div>
+  );
 }

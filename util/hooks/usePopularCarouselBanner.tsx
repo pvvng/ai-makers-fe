@@ -5,7 +5,7 @@ import {
   bigImage,
   ROTATE_TIME,
   smallImages,
-} from "@/constants/popularCarousel";
+} from "@/constants/main/popularCarousel";
 import { ImageData } from "@/types/popularCarousel";
 import { useEffect, useState } from "react";
 
