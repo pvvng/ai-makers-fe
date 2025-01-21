@@ -1,8 +1,10 @@
 // components
 import UserProfile from "./UserProfile";
-import UserNameExplainContent from "./UserNameExplainContent";
+import UserNameExplainContentWrapper from "./UserNameExplainContent";
 import UserInfoBadge from "./UserInfoBadge";
 import SkeletonContent from "../../skeleton/SkeletonContent";
+import UserNameExplainContentContainer from "./UserNameExplainContentContainer";
+import ProfileEditButtonContainer from "./ProfileEditButtonContainer";
 // func
 import getUserDataProps from "@/util/function/getUserDataProps";
 // type
@@ -26,7 +28,10 @@ export default async function UserInfo() {
     <section className="p-4 px-8 flex gap-10">
       <UserProfile profile={userdata.profile} />
       <div className="w-3/4">
-        <UserNameExplainContent {...nameExplainProps} />
+        <UserNameExplainContentWrapper>
+          <UserNameExplainContentContainer {...nameExplainProps} />
+          <ProfileEditButtonContainer />
+        </UserNameExplainContentWrapper>
         <UserInfoBadge {...userInfoBadgeProps} />
       </div>
     </section>
